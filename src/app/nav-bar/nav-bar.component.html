@@ -1,26 +1,33 @@
 <div class="nav-bar" [ngClass]="{'expanded': isNavBarExpanded}">
-    <div class="nav-bar-region-1">
-        <div class="nav-bar-button proav-button" (click)="toggleNavBar()">
+    <div class="nav-bar-control">
+        <div class="nav-bar-button proav-button proav-pulse-button" (click)="toggleNavBar()">
             <i class="fa-solid fa-bars fa-2xl"></i>
         </div>
     </div>
 
-    <div class="page-display-area">
+    <div class="page-control">
         <div class="page-nav proav-menu-option">
-            <i class="fa-regular fa-burger-soda fa-lg"></i>
-            <div class="page-text">Page 1</div>
+            <h3 class="page-text">Home</h3>
+            <i class="fa-solid fa-house"></i>
         </div>
         <div class="page-nav proav-menu-option">
+            <h3 class="page-text">Long Text Momento</h3>
             <i class="fa-regular fa-burger-soda fa-lg"></i>
-            <div class="page-text">Page 2</div>
         </div>
         <div class="page-nav proav-menu-option">
-            <i class="fa-regular fa-burger-soda fa-lg"></i>
-            <div class="page-text">Page 3</div>
+            <h3 class="page-text">Meeting Room</h3>
+            <i class="fa-solid fa-chalkboard-user"></i>
         </div>
         <div class="page-nav proav-menu-option">
-            <i class="fa-regular fa-burger-soda fa-lg"></i>
-            <div class="page-text">Page 4</div>
+            <h3 class="page-text">Teams Control</h3>
+            <i class="fa-kit fa-microsoft-teams"></i>
+        </div>
+    </div>
+
+    <div class="side-control">
+        <div class="page-nav proav-menu-option">
+            <h3 class="page-text">Settings</h3>
+            <i class="fa-solid fa-cog"></i>
         </div>
     </div>
 </div>
