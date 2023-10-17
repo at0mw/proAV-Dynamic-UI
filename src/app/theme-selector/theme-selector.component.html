@@ -1,0 +1,9 @@
+<div class="theme-select">
+    <div class="circle-button proav-button" (click)="toggleThemeWheel()">
+        <i class="fa-regular fa-palette"></i>
+    </div>
+    <div class="theme-bar" [ngStyle]="{'display': themeWheelVisible ? 'flex' : 'none'}">
+        <div class="default-theme theme-button proav-button" data-theme="theme2" (click)="selectTheme('default')"></div>
+        <div class="light-theme theme-button proav-button" data-theme="theme1" (click)="selectTheme('light')"></div>
+    </div>
+</div>

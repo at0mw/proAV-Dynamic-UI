@@ -1,0 +1,36 @@
+.theme-select {
+    position: relative;
+}
+
+.circle-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    //position: relative;
+}
+
+.theme-bar {
+    height: 60px;
+    width: 250px;
+    background-color: var(--secondaryColour);
+    position: absolute;
+    left: -280px;
+    top: -15%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--onSurfaceShadow);
+    padding:0 10px;
+    border-radius: 5px;
+}
+
+.theme-button {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;   
+    background-color: var(--primaryColour); 
+}
