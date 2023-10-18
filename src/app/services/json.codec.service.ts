@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-
+/*
+*   A service for handling deserealising json messages. This could be moved to @proav-lib?
+*/
 export class JsonCodecService {
 
     validateMessage(message: string) : MessageBase | null {
@@ -25,7 +27,7 @@ export class JsonCodecService {
     deserialiseJson(message: string) {
         let validatedMessage = this.validateMessage(message)
         if(!validatedMessage) return;
-        
+
         switch(validatedMessage.messagetype) {
             case MessageType.OnConnectConfig:
                 console.log("Received On Connect Message");
