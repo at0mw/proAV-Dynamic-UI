@@ -7,13 +7,11 @@ declare var CrComLib: any;
   providedIn: 'root',
 })
 export class CrComMessageService {
+  private messageCodec: JsonCodecService;
+
   constructor(proavMessageCore: MessageService, messageCodec: JsonCodecService) {
-    CrComLib.subscribeState('s', "1", (value: string) => {
-      console.log("It moved");
-      if (value) {
-        console.log("Here with Value \"1\"", value);
-      }
-    });
+    this.messageCodec = messageCodec;
+    CrComLib.subscribeState('s', "1", (value: string) => this.receiveJsonMessage(value));
 
     CrComLib.subscribeState('s', "2", (value: string) => {
       console.log("It moved");
@@ -21,7 +19,6 @@ export class CrComMessageService {
         console.log("Here with Value \"2\"", value);
       }
     });
-    // TODO Open Subscriptions here  
   }
 
   sendActionMessage(actionJoinId: string): void {
@@ -43,5 +40,9 @@ export class CrComMessageService {
   sendStringMessage(stringJoinId: string, value: string): void {
     console.log(`CrComLib :::: Publish ::: String :: Join Id ${stringJoinId} : Value ${value}`);
     CrComLib.publishEvent('s', stringJoinId, value);
+  }
+
+  receiveJsonMessage(message: string): void {
+    this.messageCodec.validateMessage(message);
   }
 }

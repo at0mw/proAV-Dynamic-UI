@@ -1,0 +1,3 @@
+interface MessageBase {
+    messagetype: MessageType
+}
