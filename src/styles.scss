@@ -9,6 +9,7 @@ body {
 	margin: 0;
 	padding: 0;
     background-color: var(--backgroundColour);
+	color: (var(--onPrimaryColour));
 	font-family: var(--themeFont);
 }
 
@@ -80,6 +81,40 @@ body {
 	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
 
 	--themeFont: monospace;
+}
+
+/*
+  Custom Styling - Pink Theme
+*/
+.pink-theme {
+	--primaryColour: #ff3366;
+	--onPrimaryColour: #ffffff;
+
+	--primaryVariant: #23dd90;
+	--onPrimaryVariant: #ffffff;
+
+	--secondaryColour: #353b48;
+	--onSecondaryColour: #FAFAFF;
+
+	--secondaryVariant: #1F6764;
+	--onSecondaryVariantColour: #ffffff;
+
+	--backgroundColour: #fafaff;
+	--surfaceColour: #FFFFFF;
+
+	--onBackgroundColour: #000000;
+	--onSurfaceColour: #000000;
+
+	--errorColour: #ff2200;
+	--onErrorColour: #000000;
+
+	--onBackgroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceShadow: 8px 6px 10px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.2);
+	--onSurfacePressedShadow: 4px 3px 10px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
+	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
+
+	--themeFont: Lobster;
 }
 
 .proav-button {

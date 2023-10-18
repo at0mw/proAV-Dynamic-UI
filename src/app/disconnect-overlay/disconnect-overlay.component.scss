@@ -1,0 +1,55 @@
+@import '../../styles.scss';
+
+.full-screen-overlay {
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	//background-color: rgba(0, 0, 0, 0.2);
+	//backdrop-filter: blur(40px);
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    color: var(--onBackgroundColour);
+}
+
+.feedback-area {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-icon {
+	font-size: 100px;
+	width: 100px;
+	height: 100px;
+}
+
+.system-info {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.system-info-title{
+    width: 300px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.system-info-state{
+    width: 300px;
+    margin-left: 10px;
+}
+
+.icon-area {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

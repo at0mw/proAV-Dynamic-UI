@@ -20,6 +20,7 @@
             "outputPath": "dist/pro-av-dynamic-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/proav-ui/",
             "polyfills": [
               "zone.js"
             ],
@@ -32,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/@crestron/ch5-crcomlib/build_bundles/umd/cr-com-lib.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -40,12 +43,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "8kb"
                 }
               ],
               "outputHashing": "all"
@@ -95,7 +98,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/@crestron/ch5-crcomlib/build_bundles/umd/cr-com-lib.js"
+            ]
           }
         }
       }
