@@ -11,6 +11,9 @@ import { DisconnectOverlayComponent } from './disconnect-overlay/disconnect-over
 
 import { WebXPanelService } from "./services/web.xpanel.service";
 import { ConnStatComponent } from './conn-stat/conn-stat.component';
+import { DynamicModuleFlexComponent } from './dynamic-module-flex/dynamic-module-flex.component';
+import { NgxProAVLibModule } from '@proav/angular-lib';
+import { DynamicModuleGridComponent } from './dynamic-module-grid/dynamic-module-grid.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
   webService.initializeWebXPanel();
@@ -24,10 +27,13 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
     MainContentComponent,
     ThemeSelectorComponent,
     DisconnectOverlayComponent,
-    ConnStatComponent
+    ConnStatComponent,
+    DynamicModuleFlexComponent,
+    DynamicModuleGridComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,    
+    NgxProAVLibModule
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: webXPanelFactory, multi: true, deps: [WebXPanelService] },

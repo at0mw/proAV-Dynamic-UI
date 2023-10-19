@@ -4,25 +4,22 @@ body {
 	overscroll-behavior: none; /* Stop annoying iphone browser elastic nonsense */
 }
 
-
-  
-  body {
+body {
 	position: relative;
 	margin: 0;
 	padding: 0;
 	background-color: var(--backgroundColour);
 	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
-  }
+}
 
-  .error {
+.error {
 	color: var(--errorColour);
-  }
+}
 
-  .success {
+.success {
 	color: var(--successColour);
-  }
-  
+}
 
 .default-theme {
 	--primaryColour: #353b48;
@@ -49,7 +46,7 @@ body {
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255,255,255, 0.1);
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
@@ -88,7 +85,7 @@ body {
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255,255,255, 0.1);
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
@@ -123,7 +120,7 @@ body {
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255,255,255, 0.1);
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
@@ -162,7 +159,7 @@ body {
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255,255,255, 0.1);
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
@@ -170,7 +167,7 @@ body {
 
 	--themeFont: roboto;
 
-	background-image:  url('assets/img/crestron-blue-blur.png');
+	background-image: url('assets/img/crestron-blue-blur.png');
 	background-size: cover;
 	background-position: center;
 }
@@ -209,3 +206,43 @@ body {
 		box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
 	}
 }
+
+.ui-modules-area {
+	color: var(--onSurfaceColour);
+	border-radius: 4px;
+}
+
+.dyna-flex .ui-modules-area {
+	width: 320px;
+	background-color: var(--surfaceColour);
+	box-shadow: var(--onSurfaceShadow);
+}
+
+.small-module {
+	height: var(--moduleHeightUnit);
+}
+
+.keypad-module {
+	height: calc(4 * var(--moduleHeightUnit) + 3 * var(--moduleGridGap));
+}
+
+.dpad-module {
+	height: calc(3 * var(--moduleHeightUnit) + 2 * var(--moduleGridGap));
+}
+
+.inpage-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primaryColour);
+	color: var(--onPrimaryColour);
+	border-radius: 4px;
+	box-shadow: var(--onSurfaceShadow);
+  }
+  
+  .inpage-button:active {
+	background-color: var(--secondaryVariant);
+	color: var(--onSecondaryVariantColour);
+	transform: scale(0.9);
+	box-shadow: var(--onSurfacePressedShadow);
+  }

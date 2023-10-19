@@ -1,0 +1,8 @@
+.dyna-flex {
+    margin: 0 32px;
+    gap: 32px;
+	height: 100%;
+	width: calc(100% - 2 * 32px);
+    display: flex;
+    //justify-content: space-evenly;
+}

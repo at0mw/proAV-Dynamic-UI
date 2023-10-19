@@ -14,13 +14,11 @@
 
 .content-area {
     grid-row: 2;
-    //background-color: yellow;
-    //border: solid 1px black;
+    position: relative;
 }
 
 .footer-area {
     grid-row: 3;
-    //background-color: green;
     display: flex;
     align-items: center;
     justify-content: flex-end;
