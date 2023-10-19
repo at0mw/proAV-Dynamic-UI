@@ -23,10 +23,11 @@ export class NavBarComponent {
 
     messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     const pages: PageConfig[] = [
-      { pageid: 1, pagename: 'Home', pageicon: 'fa-solid fa-house' },
-      { pageid: 2, pagename: 'Meeting', pageicon: 'fa-kit fa-microsoft-teams' },
-      { pageid: 3, pagename: 'Devices', pageicon: 'fa-solid fa-computer-speaker' },
-      { pageid: 4, pagename: 'News', pageicon: 'fa-solid fa-newspaper' },
+      { pageid: 1, pagename: 'These', pageicon: 'fa-solid fa-house' },
+      { pageid: 2, pagename: 'Faked', pageicon: 'fa-kit fa-microsoft-teams' },
+      { pageid: 3, pagename: 'From', pageicon: 'fa-solid fa-computer-speaker' },
+      { pageid: 4, pagename: 'Test', pageicon: 'fa-solid fa-newspaper' },
+      { pageid: 5, pagename: 'Data', pageicon: 'fa-solid fa-coffee' },
     ];
     const temp : OnConnectConfigMessage = {
       messagetype: 1,
