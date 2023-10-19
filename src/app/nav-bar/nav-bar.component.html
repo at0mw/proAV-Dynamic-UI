@@ -15,12 +15,15 @@
             </div>
         </div>
 
-        <div class="side-control">
-            <div class="nav-option proav-menu-option">
+        <div class="side-control">          
+            <div class="page-nav nav-option proav-menu-option">
                 <h3 class="page-text">Settings</h3>
                 <i class="fa-solid fa-cog"></i>
-            </div>
-            <!-- <h4 class="conn-stat page-text">Connection Status</h4> -->
+            </div>  
+            <div class="nav-option conn-stat">
+                <h4 class="page-text">Connection Status</h4>
+                <i [ngClass]="{'fa-spin': isSpinning}" [class]="currentIcon" class="custom-icon"></i>
+            </div>    
         </div>
     </div>
 </div>

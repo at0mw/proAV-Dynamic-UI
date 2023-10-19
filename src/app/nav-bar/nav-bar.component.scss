@@ -75,7 +75,7 @@
 	display: block;
 }
 
-.expanded .page-nav {
+.expanded .nav-option {
 	justify-content: space-between;
 	padding: 0 20px;
 	width: calc(100% - 2*20px);
@@ -89,7 +89,7 @@
 }
 
 .conn-stat {
-	margin-left: 10px;
+	opacity: 0.8;
 }
 
 .page-nav {

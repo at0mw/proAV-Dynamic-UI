@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer2, ViewChild, HostListener   } from '@angular/core';
-import { MessageService } from '@proav/angular-lib';
+import { ConnectionEventService, MessageService } from '@proav/angular-lib';
 import { MessageType, PageConfig } from '@proav/angular-lib';
 
 import { MessageBase, OnConnectConfigMessage } from '@proav/angular-lib';
@@ -10,9 +10,17 @@ import { MessageBase, OnConnectConfigMessage } from '@proav/angular-lib';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  currentIcon = 'fa-solid fa-spinner';
+  isSpinning: boolean = true;
   initialConfigData?: OnConnectConfigMessage;
-  constructor(messageService: MessageService) {
+  currentColour = "";
+
+  constructor(messageService: MessageService, eventService: ConnectionEventService) {
     // Setup subscription to configs here...
+    eventService.onConnected().subscribe(() => this.clientConnected());
+    eventService.onDisconnected().subscribe(() => this.clientDisconnected());
+    eventService.onFetchTokenFailed().subscribe(() => this.connectError());
+
     messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     const pages: PageConfig[] = [
       { pageid: 1, pagename: 'Home', pageicon: 'fa-solid fa-house' },
@@ -64,5 +72,23 @@ export class NavBarComponent {
         this.initialConfigData = onConnectConfigMessage;
       }
     }
+  }
+
+  clientConnected() {
+    console.log("Yessssssssssss Connected");
+    this.currentIcon = 'fa-kit fa-solid-wifi-circle-check';
+    this.isSpinning = false;
+  }
+
+  clientDisconnected() {
+    console.log("Nooooooooooooooooo Disconnected");
+    this.currentIcon = 'fa-kit fa-solid-wifi-circle-xmark error';
+    this.isSpinning = false;
+  }
+
+  connectError() {
+    console.log("Ahhhhhhhhh Error");
+    this.currentIcon = 'fa-kit fa-solid-wifi-circle-exclamation error';
+    this.isSpinning = false;
   }
 }
