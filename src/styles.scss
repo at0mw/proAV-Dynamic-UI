@@ -4,14 +4,17 @@ body {
 	overscroll-behavior: none; /* Stop annoying iphone browser elastic nonsense */
 }
 
-body {
+
+  
+  body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-    background-color: var(--backgroundColour);
-	color: (var(--onPrimaryColour));
+	background-color: var(--backgroundColour);
+	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
-}
+  }
+  
 
 .default-theme {
 	--primaryColour: #353b48;
@@ -28,7 +31,7 @@ body {
 
 	--backgroundColour: #333333;
 	--surfaceColour: #111111;
-    --elevatedSurfaceColour: darken(#111111, 5%);
+	--elevatedSurfaceColour: darken(#111111, 5%);
 
 	--onBackgroundColour: #ffffff;
 	--onSurfaceColour: #ffffff;
@@ -42,31 +45,31 @@ body {
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
 	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
 
-  --moduleHeightUnit: 100px;
-  --moduleGridGap: 20px;
-  --moduleInnerPadding: 10px;
+	--moduleHeightUnit: 100px;
+	--moduleGridGap: 20px;
+	--moduleInnerPadding: 10px;
 
-  --themeFont: system-ui;
+	--themeFont: system-ui;
 }
 
 /*
   Custom Styling - Light Theme
 */
 .light-theme {
-	--primaryColour: #FAFFFF;
+	--primaryColour: #faffff;
 	--onPrimaryColour: #000000;
 
 	--primaryVariant: #23dd90;
 	--onPrimaryVariant: #ffffff;
 
 	--secondaryColour: #353b48;
-	--onSecondaryColour: #FAFAFF;
+	--onSecondaryColour: #fafaff;
 
 	--secondaryVariant: #1bdf5c;
 	--onSecondaryVariantColour: #ffffff;
 
 	--backgroundColour: #fafaff;
-	--surfaceColour: #FFFFFF;
+	--surfaceColour: #ffffff;
 
 	--onBackgroundColour: #000000;
 	--onSurfaceColour: #000000;
@@ -94,13 +97,13 @@ body {
 	--onPrimaryVariant: #ffffff;
 
 	--secondaryColour: #353b48;
-	--onSecondaryColour: #FAFAFF;
+	--onSecondaryColour: #fafaff;
 
-	--secondaryVariant: #1F6764;
+	--secondaryVariant: #1f6764;
 	--onSecondaryVariantColour: #ffffff;
 
 	--backgroundColour: #fafaff;
-	--surfaceColour: #FFFFFF;
+	--surfaceColour: #ffffff;
 
 	--onBackgroundColour: #000000;
 	--onSurfaceColour: #000000;
@@ -115,40 +118,79 @@ body {
 	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
 
 	--themeFont: Lobster;
+
+	//--backgroundImage: ;
+}
+
+/*
+  Custom Styling - Glass Theme
+*/
+.glass-theme {
+	--primaryColour: #c7d9e756;
+	--onPrimaryColour: #ffffff;
+
+	--primaryVariant: #23dd90;
+	--onPrimaryVariant: #ffffff;
+
+	--secondaryColour: #353b48;
+	--onSecondaryColour: #fafaff;
+
+	--secondaryVariant: #1f6764;
+	--onSecondaryVariantColour: #ffffff;
+
+	//--backgroundColour: #fafaff;
+	--surfaceColour: #ffffff;
+
+	--onBackgroundColour: #000000;
+	--onSurfaceColour: #000000;
+
+	--errorColour: #ff2200;
+	--onErrorColour: #000000;
+
+	--onBackgroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceShadow: 8px 6px 10px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.2);
+	--onSurfacePressedShadow: 4px 3px 10px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
+	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
+
+	--themeFont: roboto;
+
+	background-image:  url('assets/img/crestron-blue-blur.png');
+	background-size: cover;
+	background-position: center;
 }
 
 .proav-button {
-    background-color: var(--secondaryColour);
-    color: var(--onSecondaryColour);
-    border-radius: 4px;
-    box-shadow: var(--onSurfaceShadow);
+	background-color: var(--secondaryColour);
+	color: var(--onSecondaryColour);
+	border-radius: 4px;
+	box-shadow: var(--onSurfaceShadow);
 }
 
 .proav-button:active {
-    background-color: var(--secondaryVariant);
-    color: var(--onSecondaryVariantColour);
-    transform: scale(0.9);
-    box-shadow: var(--onSurfacePressedShadow);
+	background-color: var(--secondaryVariant);
+	color: var(--onSecondaryVariantColour);
+	transform: scale(0.9);
+	box-shadow: var(--onSurfacePressedShadow);
 }
 
-
 .proav-menu-option:active {
-    background-color: var(--secondaryVariant);
-    color: var(--onSecondaryVariantColour);
+	background-color: var(--secondaryVariant);
+	color: var(--onSecondaryVariantColour);
 }
 
 .proav-pulse-button:active {
-    animation: pulse 0.5s ease infinite;
+	animation: pulse 0.5s ease infinite;
 }
 
 @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
-    }
-    50% {
-      box-shadow: 0 0 0 20px rgba(52, 152, 219, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
-    }
-  }
+	0% {
+		box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+	}
+	50% {
+		box-shadow: 0 0 0 20px rgba(52, 152, 219, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+	}
+}

@@ -1,34 +1,26 @@
-<div class="nav-bar" [ngClass]="{'expanded': isNavBarExpanded}">
-    <div class="nav-bar-control">
-        <div class="nav-bar-button proav-button proav-pulse-button" (click)="toggleNavBar()">
-            <i class="fa-solid fa-bars fa-2xl"></i>
+<div class="nav-bar-space">
+    <div class="nav-bar" [ngClass]="{'expanded': isNavBarExpanded}">
+        <div class="nav-bar-control">
+            <div class="nav-bar-button proav-button proav-pulse-button" (click)="toggleNavBar()">
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </div>
         </div>
-    </div>
 
-    <div class="page-control">
-        <div class="page-nav proav-menu-option">
-            <h3 class="page-text">Home</h3>
-            <i class="fa-solid fa-house"></i>
+        <div class="page-control">
+            <div *ngIf="initialConfigData">
+                <div *ngFor="let pageinfo of initialConfigData.pages" class="page-nav nav-option proav-menu-option">
+                <h3 class="page-text" [id]="pageinfo.pagename">{{ pageinfo.pagename }}</h3>
+                <i [class]="pageinfo.pageicon"></i>
+                </div>
+            </div>
         </div>
-        <div class="page-nav proav-menu-option">
-            <h3 class="page-text">Long Text Momento</h3>
-            <i class="fa-regular fa-burger-soda fa-lg"></i>
-        </div>
-        <div class="page-nav proav-menu-option">
-            <h3 class="page-text">Meeting Room</h3>
-            <i class="fa-solid fa-chalkboard-user"></i>
-        </div>
-        <div class="page-nav proav-menu-option">
-            <h3 class="page-text">Teams Control</h3>
-            <i class="fa-kit fa-microsoft-teams"></i>
-        </div>
-    </div>
 
-    <div class="side-control">
-        <div class="page-nav proav-menu-option">
-            <h3 class="page-text">Settings</h3>
-            <i class="fa-solid fa-cog"></i>
+        <div class="side-control">
+            <div class="nav-option proav-menu-option">
+                <h3 class="page-text">Settings</h3>
+                <i class="fa-solid fa-cog"></i>
+            </div>
+            <!-- <h4 class="conn-stat page-text">Connection Status</h4> -->
         </div>
-        <h4 class="conn-stat page-text">Connection Status</h4>
     </div>
 </div>
