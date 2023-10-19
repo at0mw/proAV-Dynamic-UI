@@ -50,10 +50,9 @@ export class DisconnectOverlayComponent {
   }
 
   clientFetchTokenFailed() {
-    console.log("Excuse me mate");
     this.currentIcon = 'fa-kit fa-solid-wifi-circle-exclamation';
     this.isSpinning = false;
     this.connectionState = "Error";
-    this.infoText = "Invalid Token Received";
+    this.infoText = "Failed to fetch Token";
   }
 }
