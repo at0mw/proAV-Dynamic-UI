@@ -1,5 +1,5 @@
 {
-    "pagetype": "grid",
+    "deviceid": "test-device",
     "gridconfig": [
         {
             "moduletype": "text-display",

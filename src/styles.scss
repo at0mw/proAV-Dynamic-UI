@@ -35,7 +35,7 @@ body {
 	--onSecondaryVariantColour: #ffffff;
 
 	--backgroundColour: #333333;
-	--surfaceColour: #111111;
+	--surfaceColour: #444c59;
 	--elevatedSurfaceColour: darken(#111111, 5%);
 	--backgroundAmbientLight: lighten(#333, 10%);
 
@@ -243,6 +243,11 @@ body {
   .inpage-button:active {
 	background-color: var(--secondaryVariant);
 	color: var(--onSecondaryVariantColour);
+	transform: scale(0.9);
+	box-shadow: var(--onSurfacePressedShadow);
+  }
+
+  .pressable-surface:active  {
 	transform: scale(0.9);
 	box-shadow: var(--onSurfacePressedShadow);
   }

@@ -8,7 +8,7 @@
 
         <div class="page-control">
             <div *ngIf="initialConfigData">
-                <div *ngFor="let pageinfo of initialConfigData.pages" class="page-nav nav-option proav-menu-option">
+                <div *ngFor="let pageinfo of initialConfigData.pages" class="page-nav nav-option proav-menu-option" (click)="pageSelected(pageinfo.pageid)">
                 <h3 class="page-text" [id]="pageinfo.pagename">{{ pageinfo.pagename }}</h3>
                 <i [class]="pageinfo.pageicon"></i>
                 </div>

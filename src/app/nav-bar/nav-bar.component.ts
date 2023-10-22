@@ -3,6 +3,7 @@ import { ConnectionEventService, MessageService } from '@proav/angular-lib';
 import { MessageType, PageConfig } from '@proav/angular-lib';
 
 import { MessageBase, OnConnectConfigMessage } from '@proav/angular-lib';
+import { PageManagerService } from '../services/page-manager.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +16,7 @@ export class NavBarComponent {
   initialConfigData?: OnConnectConfigMessage;
   currentColour = "";
 
-  constructor(messageService: MessageService, eventService: ConnectionEventService) {
+  constructor(messageService: MessageService, eventService: ConnectionEventService, private pageService: PageManagerService) {
     // Setup subscription to configs here...
     eventService.onConnected().subscribe(() => this.clientConnected());
     eventService.onDisconnected().subscribe(() => this.clientDisconnected());
@@ -23,11 +24,11 @@ export class NavBarComponent {
 
     messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     const pages: PageConfig[] = [
-      { pageid: 1, pagename: 'These', pageicon: 'fa-solid fa-house' },
-      { pageid: 2, pagename: 'Faked', pageicon: 'fa-kit fa-microsoft-teams' },
-      { pageid: 3, pagename: 'From', pageicon: 'fa-solid fa-computer-speaker' },
-      { pageid: 4, pagename: 'Test', pageicon: 'fa-solid fa-newspaper' },
-      { pageid: 5, pagename: 'Data', pageicon: 'fa-solid fa-coffee' },
+      { pageid: "home", pagename: 'These', pageicon: 'fa-solid fa-house' },
+      { pageid: "devices", pagename: 'Faked', pageicon: 'fa-solid fa-computer-speaker' },
+      { pageid: "from", pagename: 'From', pageicon: 'fa-kit fa-microsoft-teams' },
+      { pageid: "test", pagename: 'Test', pageicon: 'fa-solid fa-newspaper' },
+      { pageid: "data", pagename: 'Data', pageicon: 'fa-solid fa-coffee' },
     ];
     const temp : OnConnectConfigMessage = {
       messagetype: 1,
@@ -42,6 +43,11 @@ export class NavBarComponent {
 
   toggleNavBar() {
     this.isNavBarExpanded = !this.isNavBarExpanded;
+  }
+
+  pageSelected(pageName : string) {
+    console.log("Selected PageType: ", pageName);
+    this.pageService.setPage(pageName);    
   }
 
   @HostListener('touchstart', ['$event'])

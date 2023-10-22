@@ -1,0 +1,11 @@
+.device-grid {
+    margin: 0 32px;
+    padding: 0 64px;
+    gap: 64px;
+    height: 100%;
+    width: calc(100% - 2 * 64px - 2 * 32px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    //grid-template-rows: repeat(3, 1fr);     
+    overflow-y: auto;
+}

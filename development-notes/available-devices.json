@@ -1,0 +1,11 @@
+{
+    "messagetype": 4,
+    "devices": [
+        {
+            "deviceid": "test-device",
+            "devicelabel": "Samsung Display",
+            "deviceicon": "fa-solid fa-display",
+            "devicesecondarylabel": "Samsung QRCT"
+        }
+    ]
+}

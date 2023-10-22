@@ -1,4 +1,38 @@
 <div class="dyna-grid">
+    <ng-container *ngFor="let config of gridConfig">
+        <div *ngIf="config.moduletype === 'text-display'; then textDisplayBlock"></div>
+        <div *ngIf="config.moduletype === 'dpad'; then dpadBlock"></div>
+        <div *ngIf="config.moduletype === 'slider'; then sliderBlock"></div>
+        <div *ngIf="config.moduletype === 'keypad'; then keypadBlock"></div>
+        <ng-template #textDisplayBlock>
+        <proAV-text-display-element
+            [style.grid-row]="config.row.position + ' / span ' + config.row.span"
+            [style.grid-column]="config.column.position + ' / span ' + config.column.span"
+            [elementId]="config.elementId"
+        ></proAV-text-display-element>
+        </ng-template>
+        <ng-template #dpadBlock>
+        <proAV-dpad-module
+            [style.grid-row]="config.row.position + ' / span ' + config.row.span"
+            [style.grid-column]="config.column.position + ' / span ' + config.column.span"
+        ></proAV-dpad-module>
+        </ng-template>
+        <ng-template #sliderBlock>
+        <proAV-slider-element
+            [style.grid-row]="config.row.position + ' / span ' + config.row.span"
+            [style.grid-column]="config.column.position + ' / span ' + config.column.span"
+            [elementId]="config.elementId"
+            [initialValue]="config.initialValue"
+        ></proAV-slider-element>
+        </ng-template>
+        <ng-template #keypadBlock>
+        <proAV-keypad-module
+            [style.grid-row]="config.row.position + ' / span ' + config.row.span"
+            [style.grid-column]="config.column.position + ' / span ' + config.column.span"
+        ></proAV-keypad-module>
+        </ng-template>
+    </ng-container>
+    <!-- <ng-template style="height: 100%; width: 100%;"#dynamicComponentTemplate></ng-template>
     <proAV-text-display-element style="grid-row: 2 / span 1; grid-column: 5 / span 3;" [elementId]="1" [displayText]="'Yes'"></proAV-text-display-element>
     <proAV-text-display-element style="grid-row: 4 / span 1; grid-column: 8 / span 4;"></proAV-text-display-element>
     <proAV-dpad-module style="grid-row: 2 / span 2; grid-column: 8/ span 2;"></proAV-dpad-module>
@@ -7,5 +41,5 @@
     <proAV-slider-element style="grid-row: 5 / span 3; grid-column: 2 / span 3;"></proAV-slider-element>
     <proAV-keypad-module style="grid-row: 3 / span 5; grid-column: 5 / span 3;"></proAV-keypad-module>
     <proAV-dpad-module style="grid-row: 2 / span 2; grid-column: 10 / span 2;"></proAV-dpad-module>
-    <proAV-slider-element style="grid-row: 5 / span 3; grid-column: 8 / span 4;" [initialValue]="50"></proAV-slider-element>
+    <proAV-slider-element style="grid-row: 5 / span 3; grid-column: 8 / span 4;" [initialValue]="50"></proAV-slider-element> -->
 </div>

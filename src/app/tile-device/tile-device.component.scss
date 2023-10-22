@@ -1,0 +1,36 @@
+.ui-tile {
+    background-color: var(--surfaceColour);
+    box-shadow: var(--onBackgroundShadow);
+    border-radius: 5px;
+    width: 100%;
+    //height: 100%;
+	padding-bottom: 100%; /* If we want them square? */
+    position: relative;
+    overflow: hidden;
+}
+
+.tile-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //align-items: center;
+    padding: 10%;
+}
+
+.device-icon {
+    font-size: xx-large;
+}
+
+.device-label {
+    opacity: 0.8;
+}
+
+.device-icons {
+    display: flex;
+    justify-content: space-between;
+}

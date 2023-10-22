@@ -14,6 +14,10 @@ import { ConnStatComponent } from './conn-stat/conn-stat.component';
 import { DynamicModuleFlexComponent } from './dynamic-module-flex/dynamic-module-flex.component';
 import { NgxProAVLibModule } from '@proav/angular-lib';
 import { DynamicModuleGridComponent } from './dynamic-module-grid/dynamic-module-grid.component';
+import { DevicePageComponent } from './pages/device-page/device-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TileDeviceComponent } from './tile-device/tile-device.component';
+import { DevicesGridPageComponent } from './pages/devices-grid-page/devices-grid-page.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
   webService.initializeWebXPanel();
@@ -29,7 +33,11 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
     DisconnectOverlayComponent,
     ConnStatComponent,
     DynamicModuleFlexComponent,
-    DynamicModuleGridComponent
+    DynamicModuleGridComponent,
+    DevicePageComponent,
+    HomePageComponent,
+    TileDeviceComponent,
+    DevicesGridPageComponent
   ],
   imports: [
     BrowserModule,    
