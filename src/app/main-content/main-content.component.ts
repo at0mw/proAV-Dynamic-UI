@@ -8,8 +8,11 @@ import { PageManagerService } from '../services/page-manager.service';
 })
 export class MainContentComponent {
   pageToShow = "";
+  elementId: number = -1;
 
-  constructor(private pageService: PageManagerService) {}
+  constructor(private pageService: PageManagerService) {
+    console.log("The Element ID as string: ", this.elementId.toString())
+  }
 
   ngOnInit() {
     this.pageService.currentPage$.subscribe((page) => {

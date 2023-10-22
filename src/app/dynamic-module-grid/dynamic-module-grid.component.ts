@@ -51,7 +51,8 @@ export class DynamicModuleGridComponent {
 			column: {
 				position: 2,
 				span: 3
-			}
+			},
+			elementId: 3
 		},
 		{
 			moduletype: 'slider',
@@ -62,7 +63,8 @@ export class DynamicModuleGridComponent {
 			column: {
 				position: 2,
 				span: 3
-			}
+			},
+			elementId: 4
 		},
 		{
 			moduletype: 'keypad',
@@ -96,7 +98,8 @@ export class DynamicModuleGridComponent {
 				position: 8,
 				span: 4
 			},
-			initialValue: 50
+			initialValue: 50,
+			elementId: 6
 		}
 	];
 }
