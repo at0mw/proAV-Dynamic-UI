@@ -1,8 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild, HostListener   } from '@angular/core';
-import { ConnectionEventService, MessageService } from '@proav/angular-lib';
-import { MessageType, PageConfig } from '@proav/angular-lib';
+import { AvailablePages, ConnectionEventService, MessageService, MessageBase,  MessageType, PageConfig } from '@proav/angular-lib';
 
-import { MessageBase, OnConnectConfigMessage } from '@proav/angular-lib';
 import { PageManagerService } from '../services/page-manager.service';
 
 @Component({
@@ -13,7 +11,7 @@ import { PageManagerService } from '../services/page-manager.service';
 export class NavBarComponent {
   currentIcon = 'fa-solid fa-spinner';
   isSpinning: boolean = true;
-  initialConfigData?: OnConnectConfigMessage;
+  initialConfigData?: AvailablePages;
   currentColour = "";
 
   constructor(messageService: MessageService, eventService: ConnectionEventService, private pageService: PageManagerService) {
@@ -21,8 +19,8 @@ export class NavBarComponent {
     eventService.onConnected().subscribe(() => this.clientConnected());
     eventService.onDisconnected().subscribe(() => this.clientDisconnected());
     eventService.onFetchTokenFailed().subscribe(() => this.connectError());
-
-    messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
+    messageService.subscribeToMessageByID(MessageType.AvailablePages).subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
+    //messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     const pages: PageConfig[] = [
       { pageid: "home", pagename: 'These', pageicon: 'fa-solid fa-house' },
       { pageid: "devices", pagename: 'Faked', pageicon: 'fa-solid fa-computer-speaker' },
@@ -30,7 +28,7 @@ export class NavBarComponent {
       { pageid: "test", pagename: 'Test', pageicon: 'fa-solid fa-newspaper' },
       { pageid: "data", pagename: 'Data', pageicon: 'fa-solid fa-coffee' },
     ];
-    const temp : OnConnectConfigMessage = {
+    const temp : AvailablePages = {
       messagetype: 1,
       pages: pages,
     };
@@ -71,9 +69,9 @@ export class NavBarComponent {
 
   receivedMessageUpdate(message: MessageBase) {
     console.log("Received Message Update in Nav Bar...");
-    if(message.messagetype === MessageType.OnConnectConfig){
+    if(message.messagetype === MessageType.AvailablePages){
       console.log("Message type is OnConnectConfig...");
-      let onConnectConfigMessage = message as OnConnectConfigMessage;
+      let onConnectConfigMessage = message as AvailablePages;
       if(onConnectConfigMessage) {
         console.log("Correctly handled...");
         this.initialConfigData = onConnectConfigMessage;
