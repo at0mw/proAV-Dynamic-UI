@@ -13,132 +13,16 @@ body {
 	font-family: var(--themeFont);
 }
 
-.error {
-	color: var(--errorColour);
-}
-
-.success {
-	color: var(--successColour);
-}
-
+/*
+  Custom Styling - Default Glass Theme
+*/
 .default-theme {
-	--primaryColour: #353b48;
-	--onPrimaryColour: #fafaff;
-
-	--primaryVariant: #17bebb;
-	--onPrimaryVariant: #ffffff;
-
-	--secondaryColour: #fafaff;
-	--onSecondaryColour: #000000;
-
-	--secondaryVariant: #5fb49c;
-	--onSecondaryVariantColour: #ffffff;
-
-	--backgroundColour: #333333;
-	--surfaceColour: #444c59;
-	--elevatedSurfaceColour: darken(#111111, 5%);
-	--backgroundAmbientLight: lighten(#333, 10%);
-
-	--onBackgroundColour: #ffffff;
-	--onSurfaceColour: #ffffff;
-
-	--errorColour: #ff2200;
-	--onErrorColour: #000000;
-	--successColour: #1bdf5c;
-
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
-	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
-	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
-	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
-	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
-
-	--moduleHeightUnit: 100px;
-	--moduleGridGap: 20px;
-	--moduleInnerPadding: 10px;
-
-	--themeFont: system-ui;
-}
-
-/*
-  Custom Styling - Light Theme
-*/
-.light-theme {
-	--primaryColour: #faffff;
-	--onPrimaryColour: #000000;
-
-	--primaryVariant: #ff2200;
-	--onPrimaryVariant: #ffffff;
-
-	--secondaryColour: #353b48;
-	--onSecondaryColour: #fafaff;
-
-	--secondaryVariant: #1bdf5c;
-	--onSecondaryVariantColour: #ffffff;
-
-	--backgroundColour: #fafaff;
-	--surfaceColour: #ffffff;
-
-	--onBackgroundColour: #000000;
-	--onSurfaceColour: #000000;
-
-	--errorColour: #ff2200;
-	--onErrorColour: #000000;
-	--successColour: #1bdf5c;
-
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
-	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
-	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
-	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
-	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
-
-	--themeFont: monospace;
-}
-
-/*
-  Custom Styling - Pink Theme
-*/
-.pink-theme {
-	--primaryColour: #ff3366;
-	--onPrimaryColour: #ffffff;
-
-	--primaryVariant: #23dd90;
-	--onPrimaryVariant: #ffffff;
-
-	--secondaryColour: #353b48;
-	--onSecondaryColour: #fafaff;
-
-	--secondaryVariant: #1f6764;
-	--onSecondaryVariantColour: #ffffff;
-
-	--backgroundColour: #fafaff;
-	--surfaceColour: #ffffff;
-
-	--onBackgroundColour: #000000;
-	--onSurfaceColour: #000000;
-
-	--errorColour: #ff2200;
-	--onErrorColour: #000000;
-	--successColour: #1bdf5c;
-
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
-	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
-	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
-	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
-	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
-
-	--themeFont: Lobster;
-
-	//--backgroundImage: ;
-}
-
-/*
-  Custom Styling - Glass Theme
-*/
-.glass-theme {
 	--primaryColour: #c7d9e756;
 	--onPrimaryColour: #ffffff;
 
 	--backgroundBlur: blur(40px);
+	--surfaceBlur: blur(40px);
+	--overlayBlur: blur(40px);
 
 	--primaryVariant: #23dd90;
 	--onPrimaryVariant: #ffffff;
@@ -149,15 +33,22 @@ body {
 	--secondaryVariant: #1f6764;
 	--onSecondaryVariantColour: #ffffff;
 
-	//--backgroundColour: #fafaff;
+	--backgroundColour: transparent;
 	--surfaceColour: #4b657956;
+	--raisedSurfaceColour: #FAFAFF;
 
 	--onBackgroundColour: #fafaff;
 	--onSurfaceColour: #FFFFFF;
+	--onRaisedSurfaceColour: #000000;
 
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
+
+	--standardBorderRadius: 5px;
+	--smallSpacing: 5px;
+	--mediumSpacing: 10px;
+	--largeSpacing: 20px;
 
 	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
@@ -170,84 +61,6 @@ body {
 	background-image: url('assets/img/crestron-blue-blur.png');
 	background-size: cover;
 	background-position: center;
+
+	--elevatedSurfaceColour: darken(var(--surfaceColour, 5%));
 }
-
-.proav-button {
-	background-color: var(--secondaryColour);
-	color: var(--onSecondaryColour);
-	border-radius: 4px;
-	box-shadow: var(--onSurfaceShadow);
-}
-
-.proav-button:active {
-	background-color: var(--secondaryVariant);
-	color: var(--onSecondaryVariantColour);
-	transform: scale(0.9);
-	box-shadow: var(--onSurfacePressedShadow);
-}
-
-.proav-menu-option:active {
-	background-color: var(--secondaryVariant);
-	color: var(--onSecondaryVariantColour);
-}
-
-.proav-pulse-button:active {
-	animation: pulse 0.5s ease infinite;
-}
-
-@keyframes pulse {
-	0% {
-		box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
-	}
-	50% {
-		box-shadow: 0 0 0 20px rgba(52, 152, 219, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
-	}
-}
-
-.ui-modules-area {
-	color: var(--onSurfaceColour);
-	border-radius: 4px;
-}
-
-.dyna-flex .ui-modules-area {
-	//width: 320px;
-	background-color: var(--surfaceColour);
-	box-shadow: var(--onSurfaceShadow);
-}
-
-.small-module {
-	height: var(--moduleHeightUnit);
-}
-
-.keypad-module {
-	height: calc(4 * var(--moduleHeightUnit) + 3 * var(--moduleGridGap));
-}
-
-.dpad-module {
-	height: calc(3 * var(--moduleHeightUnit) + 2 * var(--moduleGridGap));
-}
-
-.inpage-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--primaryColour);
-	color: var(--onPrimaryColour);
-	border-radius: 4px;
-	box-shadow: var(--onSurfaceShadow);
-  }
-  
-  .inpage-button:active {
-	background-color: var(--secondaryVariant);
-	color: var(--onSecondaryVariantColour);
-	transform: scale(0.9);
-	box-shadow: var(--onSurfacePressedShadow);
-  }
-
-  .pressable-surface:active  {
-	transform: scale(0.9);
-	box-shadow: var(--onSurfacePressedShadow);
-  }

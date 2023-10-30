@@ -1,0 +1,16 @@
+<div class="surface-collection">
+    <div class="surface" *ngFor="let surface of surfaces" 
+    (click)="toggleExpansion(surface)"
+    [class.expanded]="expandedSurface === surface">
+        <div class="surface-card">
+            <div class="content-area">
+                <!-- Ng For With templates below? -->
+            </div>					
+        </div>
+        <div class="experiment">
+            <div class="surface-icon">
+                <i [class]="surface.icon"></i>
+            </div>
+        </div>
+    </div>
+</div>
