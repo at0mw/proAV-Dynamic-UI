@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:deployweb": "ch5-cli deploy -H 10.100.203.21 -p -t web dist/proav-ui.ch5z",
-    "build:archive": "ch5-cli archive -p proav-ui -d dist/pro-av-dynamic-ui -o dist",
+    "build:deployweb": "ch5-cli deploy -H 10.100.203.21 -p -t web dist/proav-uc-engine.ch5z",
+    "build:archive": "ch5-cli archive -p proav-uc-engine -d dist/pro-av-dynamic-ui -o dist",
     "build:onestep": "npm run build:archive && npm run build:deployweb",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

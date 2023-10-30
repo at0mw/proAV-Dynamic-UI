@@ -45,7 +45,7 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: webXPanelFactory, multi: true, deps: [WebXPanelService] },
-    {provide: APP_BASE_HREF, useValue: './proav-ui/'}
+    {provide: APP_BASE_HREF, useValue: './proav-uc-engine/'}
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
