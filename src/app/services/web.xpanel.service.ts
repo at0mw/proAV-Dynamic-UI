@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import WebXPanel, { WebXPanelConfigParams, WebXPanelEvents, isActive } from '@crestron/ch5-webxpanel';
+import { getWebXPanel } from '@crestron/ch5-webxpanel';
 import { ConnectionEventService } from '@proav/angular-lib';
 import { environment } from '../protocol/environments/environment';
 
-const configuration: Partial<WebXPanelConfigParams> = {
+const { WebXPanel, WebXPanelConfigParams, WebXPanelEvents, isActive } = getWebXPanel(true);
+
+const configuration: Partial<typeof WebXPanelConfigParams> = {
 	// host: 'ip_address | hostname', // defaults to window.location.host
 	ipId: environment.ipId // string representing a hex value. Might contain "0x" or not. Defaults to "0x03"
 	// roomId: 'virtual_control_room_id', // defaults to empty string
