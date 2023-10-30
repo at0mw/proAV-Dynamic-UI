@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { SurfaceConfig } from 'src/app/protocol/interfaces/interface.index';
 import { testSurfaceConfig } from 'src/app/testing-values/test-surfaces-msg';
 
+declare var CrComLib: any;
+
 @Component({
   selector: 'app-surface-collection',
   templateUrl: './surface-collection.component.html',
@@ -20,6 +22,13 @@ export class SurfaceCollectionComponent {
   touchStartX: number = 0;
   expandedSurface: SurfaceConfig | null = null;
 
+  ngOnInit() {
+    CrComLib.subscribeState('s', "1", (value: string) => this.updateSurfaces(value));
+  }
+
+  updateSurfaces(value: string){
+    console.log("Updates Surface Config: ", value)
+  }
 
   toggleExpansion(surface: SurfaceConfig) {
     this.expandedSurface = surface;
