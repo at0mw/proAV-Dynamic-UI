@@ -8,7 +8,6 @@
 
 .surface {
     cursor: pointer;
-    box-sizing: border-box;
     color: var(--onSurfaceColour);
     transition: flex 0.5s;
     height: 100%;
@@ -16,18 +15,21 @@
     border-radius: var(--standardBorderRadius);      
     box-shadow: var(--onBackgroundShadow);
     backdrop-filter: var(--surfaceBlur);
+    background-color: var(--surfaceColour);
   }
 
   .expanded {
     flex: 2;
     cursor: auto;
   }
+
   .surface-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto;
+    font-size: 28px;
   }
 
   .surface.expanded .surface-icon {
@@ -45,23 +47,20 @@
   }
   
   .surface-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 85%;
     width: 5vw;
     opacity: 0;
     visibility: hidden;
-    //transition: opacity 0.2s, visibility 0.2s, height 0.2s ease;
   }
 
   .surface.expanded .surface-card {
+    height: 100%;
+    width: 100%;
+    flex: 1;
     opacity: 1;
     visibility: visible;
-    width: 100%;
     transition: opacity 1.4s, visibility 1s, height 0.2s ease;
     transition-delay: 0.5s;
-    height: 100%;
   }
 
   .surface .content-container {
@@ -84,18 +83,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    // position: relative;
-    // bottom: 0;      
+    margin: auto; 
   }
 
   .surface.expanded .experiment {
     animation: delayedChange 0.3s ease 0.7s forwards; 
-    backdrop-filter: var(--surfaceBlur);   
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
+    backdrop-filter: var(--surfaceBlur);
   }
 
   @keyframes delayedChange {
@@ -113,22 +106,4 @@
       border-radius: 40px 40px 0 0;
       opacity: 1;
     }
-  }
-
-  .sharing-notification-badge {
-    position: absolute;
-    bottom: 2vmin;
-    right: 1.5vmin;
-    width: 1vmin;
-    height: 1vmin;
-    background-color: red;
-    border-radius: 50%;
-    box-shadow: 0 5px 12px rgb(255, 0, 0);
-    transition: opacity 2s;
-    display: none;
-  }
-
-  .expanded .sharing-notification-badge {
-    transition: opacity 0s;
-    opacity: 0;
   }

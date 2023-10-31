@@ -1,0 +1,23 @@
+.source-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--mediumSpacing);
+}
+
+.source-button {
+    padding: var(--smallSpacing);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.source-button-text {
+    //text-align: center;
+}
+
+.source-button-icon i {
+    padding: var(--smallSpacing);
+}

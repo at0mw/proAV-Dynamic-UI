@@ -8,9 +8,11 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
+	background-image: url('assets/img/crestron-blur.png');
 	background-color: var(--backgroundColour);
 	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
+    -webkit-tap-highlight-color: transparent; /* This may cause other issues - Removes Blue highlight on focus in chrome */
 }
 
 /*
@@ -33,7 +35,7 @@ body {
 	--secondaryVariant: #1f6764;
 	--onSecondaryVariantColour: #ffffff;
 
-	--backgroundColour: transparent;
+	--backgroundColour: rgba(0,0,0,0.2);
 	--surfaceColour: #4b657956;
 	--raisedSurfaceColour: #FAFAFF;
 
@@ -58,9 +60,21 @@ body {
 
 	--themeFont: roboto;
 
-	background-image: url('assets/img/crestron-blue-blur.png');
 	background-size: cover;
 	background-position: center;
 
 	--elevatedSurfaceColour: darken(var(--surfaceColour, 5%));
+
+	--iconPressSize: 44px;
+	--activeOpacity: 0.6;
+}
+
+.button:active {
+	opacity: var(--activeOpacity);
+}
+
+.box-button {
+	height: 200px;
+	width: 200px;
+	border: solid 1px white;
 }

@@ -3,9 +3,18 @@
     (click)="toggleExpansion(surface)"
     [class.expanded]="expandedSurface === surface">
         <div class="surface-card">
-            <div class="content-area">
-                <!-- Ng For With templates below? -->
-            </div>					
+                <!-- Ng For With templates below? -->                
+                <div *ngIf="surface.id === SurfaceType.Home; then homeSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then settingsSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then lightingSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then shadeSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then sourceSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then cameraSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then matrixSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then powerSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then airMediaSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then flipTopSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Home; then displaySurfaceBlock"></div>			
         </div>
         <div class="experiment">
             <div class="surface-icon">
@@ -14,3 +23,38 @@
         </div>
     </div>
 </div>
+
+<!-- Need to refactor this to use an abstract component/factory in future editions -->
+<ng-template #homeSurfaceBlock>
+
+</ng-template>
+<ng-template #settingsSurfaceBlock>
+
+</ng-template>
+<ng-template #lightingSurfaceBlock>
+
+</ng-template>
+<ng-template #shadeSurfaceBlock>
+
+</ng-template>
+<ng-template #sourceSurfaceBlock>
+    <app-source-surface></app-source-surface>
+</ng-template>
+<ng-template #cameraSurfaceBlock>
+
+</ng-template>
+<ng-template #matrixSurfaceBlock>
+
+</ng-template>
+<ng-template #powerSurfaceBlock>
+
+</ng-template>
+<ng-template #airMediaSurfaceBlock>
+
+</ng-template>
+<ng-template #flipTopSurfaceBlock>
+
+</ng-template>
+<ng-template #displaySurfaceBlock>
+
+</ng-template>

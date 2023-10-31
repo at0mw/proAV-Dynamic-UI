@@ -1,5 +1,8 @@
 export const DigitalJoins = {
-    Button1: "1",
-    Button2: "2",
-    Button3: "3",
+    MicMute: "11",
+    MicsMore: "12",
+    VolumeMute: "16",
+    VolumeUp: "14",
+    VolumeDown: "15",
+    VolumeMore: "18"
 }

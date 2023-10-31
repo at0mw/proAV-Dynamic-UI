@@ -1,3 +1,3 @@
 export const AnalogJoins = {
-    Slider1: "1",
+    VolumeControl: "1",
 }

@@ -1,3 +1,42 @@
 <div class="control-bar">
-    Control Bar
+    <div class="control-bar-grid">
+
+        <!-- Mic Controls -->
+        <div class="control-buttons" [style.grid-row]="'1 / span 1'" [style.grid-column]="'1 / span 1'">
+            <i id="micMute" class="micmute-icon footer-icon fa-regular fa-microphone-slash button" (click)="micMutePressed()"></i>
+            <i id="mics" class="standard-footer-icon footer-icon fa-regular fa-caret-up button" (click)="micsMenuPressed()"></i>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-area" [style.grid-row]="'1 / span 1'" [style.grid-column]="'3 / span 3'">
+            <div class="logo-container">
+                <div class="logo-text">Powered by</div>
+                <img class="logo" src="assets/img/proAV-logo-transparent.png" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Volume Controls -->
+        <div class="control-buttons" [style.grid-row]="'1 / span 1'" [style.grid-column]="'8 / span 1'">
+            <i id="volume-mute" class="standard-footer-icon footer-icon fa-regular fa-volume-xmark button" (click)="volumeMutePressed()"></i>  
+            <i id="volume-inputs" class="standard-footer-icon footer-icon fa-regular fa-caret-up button"  (click)="volumeMenuPressed()"></i>
+        </div>
+
+        <!-- Volume Down -->
+        <div class="control-buttons button" [style.grid-row]="'1 / span 1'" [style.grid-column]="'9 / span 1'">
+            <i id="volume-down" class="standard-footer-icon footer-icon fa-regular fa-volume-low" (mousedown)="volumeDownPressed()" (mouseup)="volumeDownReleased()"></i>  
+        </div>
+
+        <!-- Volume Slider -->
+        <proAV-slider-element            
+            [style.grid-row]="'1 / span 1'"
+            [style.grid-column]="'10 / span 2'"
+            [elementId]="volumeSliderJoin"
+            [initialValue]="0">
+        </proAV-slider-element>    
+
+        <!-- Volume Up -->
+        <div class="control-buttons button" [style.grid-row]="'1 / span 1'" [style.grid-column]="'12 / span 1'">
+            <i id="volume-up" class="standard-footer-icon footer-icon fa-regular fa-volume-high" (mousedown)="volumeUpPressed()" (mouseup)="volumeUpReleased()"></i>  
+        </div>
+    </div>
 </div>

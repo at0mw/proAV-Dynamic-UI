@@ -1,25 +1,19 @@
 export const testSurfaceConfig = {
     surfaces: [
         {
-            id: "test-device",
-            label: "Samsung Display",
-            icon: "fa-solid fa-display",
-            surfacetype: 1,
-            expanded: true
+            id: 1,
+            name: "Samsung Display",
+            icon: "fa-solid fa-display"
         },
         {
-            id: "device-2",
-            label: "Apple Tv",
-            icon: "fa-brands fa-apple",
-            surfacetype: 1,
-            expanded: false
+            id: 2,
+            name: "Apple Tv",
+            icon: "fa-brands fa-apple"
         },
         {
-            id: "device-3",
-            label: "HP Laptop",
-            icon: "fa-solid fa-laptop",
-            surfacetype: 1,
-            expanded: false
+            id: 3,
+            name: "HP Laptop",
+            icon: "fa-solid fa-laptop"
         }
     ]
 };

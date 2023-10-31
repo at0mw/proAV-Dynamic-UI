@@ -1,3 +1,21 @@
 <div class="header-bar">
-    Header Bar
+    <div class="column">
+        <div class="row">
+            <h1 class="time-text primary-header"> {{ currentDateTime | date: 'h:mm a' }}</h1>                
+        </div>
+        <div class="row">
+            <h2 class="date-text primary-header">{{ currentDateTime | date: 'EEEE d MMMM yy' }}</h2>
+        </div>
+    </div>
+    <div class="column logo-column">
+        <img class="logo" src="assets/img/ch5-logo-white.svg" alt="Logo">
+    </div>
+    <div class="column right-column">
+        <div class="row">              
+            <h1 class="roomname-text primary-header">Meeting Room</h1>
+        </div>
+        <div class="row">
+            <h2 class="mode-text primary-header">MTR Flex Mode</h2>
+        </div>
+    </div>
 </div>

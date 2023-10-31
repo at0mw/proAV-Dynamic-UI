@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DevicePageComponent } from './device-page.component';
+import { SourceSurfaceComponent } from './source-surface.component';
 
-describe('DevicePageComponent', () => {
-  let component: DevicePageComponent;
-  let fixture: ComponentFixture<DevicePageComponent>;
+describe('SourceSurfaceComponent', () => {
+  let component: SourceSurfaceComponent;
+  let fixture: ComponentFixture<SourceSurfaceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DevicePageComponent ]
+      declarations: [ SourceSurfaceComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DevicePageComponent);
+    fixture = TestBed.createComponent(SourceSurfaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

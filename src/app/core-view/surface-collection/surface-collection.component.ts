@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { SurfaceConfig } from 'src/app/protocol/interfaces/interface.index';
 import { testSurfaceConfig } from 'src/app/testing-values/test-surfaces-msg';
+import { SurfaceType } from 'src/app/protocol/enums/enum.index';
 
 declare var CrComLib: any;
 
@@ -10,13 +11,12 @@ declare var CrComLib: any;
   styleUrls: ['./surface-collection.component.scss']
 })
 export class SurfaceCollectionComponent {
+  SurfaceType = SurfaceType;
   surfaces: SurfaceConfig[] = testSurfaceConfig.surfaces.map(surface => {
     return {
         id: surface.id,
-        label: surface.label,
-        icon: surface.icon,
-        surfacetype: surface.surfacetype,
-        expanded: surface.expanded
+        name: surface.name,
+        icon: surface.icon
     };
   });
   touchStartX: number = 0;

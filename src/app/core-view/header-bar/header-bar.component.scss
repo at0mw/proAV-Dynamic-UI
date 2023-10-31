@@ -1,4 +1,45 @@
 .header-bar {
-    height: 10%;
-    width: 100%;
+	height: 10%;
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+	justify-content: center;
+	align-items: center;
+	padding: 0 var(--mediumSpacing);
+}
+
+.primary-header {
+    margin: 0;
+}
+
+.logo {
+	transform: scale(0.6);
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	max-width: 100%;
+}
+
+.column {
+	flex: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.logo-column {
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	flex-wrap: nowrap;
+}
+
+.right-column {
+	text-align: right;
+	align-items: flex-end;
 }
