@@ -1,23 +1,52 @@
 .source-content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--mediumSpacing);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--largeSpacing);
 }
 
 .source-button {
-    padding: var(--smallSpacing);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+	padding: var(--mediumSpacing);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: var(--standardBorderRadius);
 }
 
-.source-button-text {
-    //text-align: center;
-}
+// .source-button-text {
+//     text-align: center;
+// }
 
+.source-button-icon {
+	display: flex;
+	align-items: end;
+}
 .source-button-icon i {
-    padding: var(--smallSpacing);
+	padding: var(--smallSpacing);
+}
+
+.source-button:active {
+	animation: borderAnimation 4s linear infinite;
+}
+
+@keyframes borderAnimation {
+	0% {
+		box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+	}
+	25% {
+		box-shadow: 0 0 5px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.8);
+	}
+	50% {
+		box-shadow: 0 0 5px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.8);
+	}
+	75% {
+		box-shadow: 0 0 5px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.8),
+			0 0 50px rgba(52, 152, 219, 0.8);
+	}
+	100% {
+		box-shadow: 0 0 5px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.8),
+			0 0 50px rgba(52, 152, 219, 0.8), 0 0 70px rgba(52, 152, 219, 0.8);
+	}
 }
