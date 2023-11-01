@@ -4,5 +4,7 @@ export const DigitalJoins = {
     VolumeMute: "16",
     VolumeUp: "14",
     VolumeDown: "15",
-    VolumeMore: "18"
+    VolumeMore: "18",
+    HdmiSource: "3",
+    AirMediaSource: "4"
 }
