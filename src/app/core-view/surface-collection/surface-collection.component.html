@@ -5,16 +5,16 @@
         <div class="surface-card">
                 <!-- Ng For With templates below? -->                
                 <div *ngIf="surface.id === SurfaceType.Home; then homeSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then settingsSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then lightingSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then shadeSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then sourceSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then cameraSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then matrixSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then powerSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then airMediaSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then flipTopSurfaceBlock"></div>
-                <div *ngIf="surface.id === SurfaceType.Home; then displaySurfaceBlock"></div>			
+                <div *ngIf="surface.id === SurfaceType.Settings; then settingsSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Lighting; then lightingSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Shade; then shadeSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Source; then sourceSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Camera; then cameraSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Matrix; then matrixSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Power; then powerSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.AirMedia; then airMediaSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.FlipTops; then flipTopSurfaceBlock"></div>
+                <div *ngIf="surface.id === SurfaceType.Display; then displaySurfaceBlock"></div>			
         </div>
         <div class="experiment">
             <div class="surface-icon">

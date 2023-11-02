@@ -13,6 +13,7 @@ body {
 	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
     -webkit-tap-highlight-color: transparent; /* This may cause other issues - Removes Blue highlight on focus in chrome */
+	user-select: none; /* Stop highlighted text */
 }
 
 /*
@@ -26,7 +27,7 @@ body {
 	--surfaceBlur: blur(40px);
 	--overlayBlur: blur(40px);
 
-	--primaryVariant: #23dd90;
+	--primaryVariant: #23a2dd;
 	--onPrimaryVariant: #ffffff;
 
 	--secondaryColour: #353b48;
@@ -52,7 +53,7 @@ body {
 	--mediumSpacing: 10px;
 	--largeSpacing: 20px;
 
-	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
+	--onBackgroundShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(255, 255, 255, 0.1);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);

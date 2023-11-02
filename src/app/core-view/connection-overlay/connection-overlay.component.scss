@@ -12,3 +12,31 @@
     top: 0;
     left: 0;
 }
+
+.icon-area {
+    font-size: 60px;
+}
+
+.system-info {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: 2;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    column-gap: var(--mediumSpacing);
+}
+
+.info-title {
+    text-align: end;
+}
+
+.connection-state-title {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.connection-state-info {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}

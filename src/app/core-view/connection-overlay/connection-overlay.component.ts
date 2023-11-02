@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ConnectionEventService } from '@proav/angular-lib';
+import { environment } from 'src/app/protocol/environments/environment';
 
 @Component({
   selector: 'app-connection-overlay',
@@ -7,13 +8,15 @@ import { ConnectionEventService } from '@proav/angular-lib';
   styleUrls: ['./connection-overlay.component.scss']
 })
 export class ConnectionOverlayComponent {
-  isOverlayVisible = true;
+  isOverlayVisible = environment.production;
   currentIcon = 'fa-solid fa-spinner';
   connectionState = "Unknown";
   isSpinning: boolean = true;
   infoText = "";
 
   constructor(private eventService: ConnectionEventService) {
+    console.log("Is Production", environment.production);
+    console.log("Is Production", this.isOverlayVisible);
     this.eventService.onConnected().subscribe(() => this.clientConnected());
     this.eventService.onDisconnected().subscribe(() => this.clientDisconnected());
     this.eventService.onConnecting().subscribe(() => this.clientConnecting());

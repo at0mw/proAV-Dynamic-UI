@@ -1,15 +1,11 @@
 <div class="connection-state-overlay" [style.display]="isOverlayVisible ? 'flex' : 'none'">
-    <div class="feedback-area">
-        <div class="icon-area">
-            <i [ngClass]="{'fa-spin': isSpinning}" [class]="currentIcon" class="custom-icon"></i>
-        </div>
-        <div class="system-info">
-            <h1 class="system-info-title info-text">System</h1>
-            <h3 class="system-info-state">{{connectionState}}</h3>
-        </div>
-        <div *ngIf="infoText" class="system-info">
-            <h1 class="system-info-title info-text">Feedback</h1>
-            <h3 class="system-info-state">{{infoText}}</h3>
-        </div>
+    <div class="icon-area">
+        <i [ngClass]="{'fa-spin': isSpinning}" [class]="currentIcon" class="custom-icon"></i>
+    </div>
+    <div class="system-info">
+        <h1 class="connection-state-title info-title">System</h1>
+        <h3 class="connection-state-info">{{connectionState}}</h3>
+        <h1 *ngIf="infoText" class="feedback-title info-title">Feedback</h1>
+        <h3 *ngIf="infoText" class="feedback-message">{{infoText}}</h3>
     </div>
 </div>

@@ -1,14 +1,14 @@
 export const testSurfaceConfig = {
     surfaces: [
         {
-            id: 1,
-            name: "Samsung Display",
-            icon: "fa-solid fa-display"
+            id: 5,
+            name: "Source Select",
+            icon: "fa-regular fa-arrow-up-from-bracket"
         },
         {
             id: 2,
-            name: "Apple Tv",
-            icon: "fa-brands fa-apple"
+            name: "Samsung Display",
+            icon: "fa-solid fa-display"
         },
         {
             id: 3,

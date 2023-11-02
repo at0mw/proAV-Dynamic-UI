@@ -27,7 +27,17 @@ export class SurfaceCollectionComponent {
   }
 
   updateSurfaces(value: string){
-    console.log("Updates Surface Config: ", value)
+    console.log("Updates Surface Config: ", value);
+    try {
+      const data = JSON.parse(value);
+      if (data.surfaces && Array.isArray(data.surfaces)) {
+        this.surfaces = data.surfaces as SurfaceConfig[];
+      } else {
+        console.error('Invalid JSON structure: surfaces property is missing or not an array.');
+      }
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+    }
   }
 
   toggleExpansion(surface: SurfaceConfig) {
