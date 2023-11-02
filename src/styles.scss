@@ -70,6 +70,10 @@ body {
 	--activeOpacity: 0.6;
 }
 
+.error-text {
+    color: var(--errorColour);
+}
+
 .button:active {
 	opacity: var(--activeOpacity);
 }

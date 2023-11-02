@@ -20,7 +20,6 @@
 	);
 	border-radius: var(--standardBorderRadius);
 	position: relative;
-	transition: opacity 2s;
 }
 
 .source-button-icon {
@@ -43,52 +42,3 @@
 		box-shadow: 0 0 0 var(--mediumSpacing) transparent;
 	}
 }
-
-// @keyframes borderAnimation {
-// 	0% {
-// 		box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-// 	}
-// 	25% {
-// 		box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6);
-// 	}
-// 	50% {
-// 		box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.6);
-// 	}
-// 	75% {
-// 		box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.6),
-// 			0 0 50px rgba(255, 255, 255, 0.6);
-// 	}
-// 	100% {
-// 		box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.6),
-// 			0 0 50px rgba(255, 255, 255, 0.6), 0 0 70px rgba(255, 255, 255, 0.6);
-// 	}
-// }
-
-// .pulse {
-// 	position: relative;
-// }
-
-// .source-button span {
-// 	position: absolute;
-// 	width: calc(100% - 2 * var(--mediumSpacing));
-// 	height: calc(100% - 2 * var(--mediumSpacing));
-// 	background: inherit;
-// 	border-radius: inherit;
-// 	opacity: 0;
-// }
-
-// .pulse span {
-// 	opacity: 0;
-// 	animation: pulseAnimate 1s ease-out infinite;
-// 	animation-delay: calc(0.5s * var(--i));
-// }
-
-// @keyframes pulseAnimate {
-// 	100% {
-// 		opacity: 0;
-// 		transform: scale(1.5);
-// 	}
-// 	0% {
-// 		opacity: 1;
-// 	}
-// }

@@ -1,0 +1,32 @@
+<div class="fliptop-content">
+    <div class="stable-area">
+        <img class="fliptops-svg" src="assets/img/fliptops.svg" alt="Desktop socket blueprint">   
+        <div class="top-left-icon ft-icon-area"><i class="fa-regular fa-link"></i></div>
+        <div class="top-right-icon ft-icon-area"><i class="fa-regular fa-link"></i></div>
+        <div class="bottom-right-icon ft-icon-area"><i class="fa-regular fa-link"></i></div>
+        <div class="top-left-text ft-text-area">
+            <h4>Retracted</h4>
+            <div class="button retract-button"  
+            (pointerdown)="retractButtonOnePressed()" 
+            (pointerup)="retractButtonOneReleased()" 
+            (pointerleave)="retractButtonOneReleased()"></div>
+            <h4 class="error-text"><i class="fa-solid fa-circle-exclamation"></i>ClutchFault</h4>
+        </div>
+        <div class="top-right-text ft-text-area">
+            <h4>Retracted</h4>
+            <div class="button retract-button" 
+            (pointerdown)="retractButtonTwoPressed()" 
+            (pointerup)="retractButtonOneReleased()" 
+            (pointerleave)="retractButtonTwoReleased()"></div>
+            <h4 class="error-text"><i class="fa-solid fa-circle-exclamation"></i>ClutchFault</h4>
+        </div>
+        <div class="bottom-right-text ft-text-area">
+            <h4>Retracted</h4>
+            <div class="button retract-button"  
+            (pointerdown)="retractButtonThreePressed()" 
+            (pointerup)="retractButtonOneReleased()" 
+            (pointerleave)="retractButtonThreeReleased()"></div>
+            <h4 class="error-text"><i class="fa-solid fa-circle-exclamation"></i>ClutchFault</h4>
+        </div>
+    </div>
+</div>

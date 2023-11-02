@@ -6,14 +6,34 @@ export const testSurfaceConfig = {
             icon: "fa-regular fa-arrow-up-from-bracket"
         },
         {
-            id: 2,
-            name: "Samsung Display",
-            icon: "fa-solid fa-display"
+            id: 3,
+            name: "Lighting Control",
+            icon: "fa-regular fa-lightbulb"
         },
         {
-            id: 3,
-            name: "HP Laptop",
-            icon: "fa-solid fa-laptop"
+            id: 4,
+            name: "Shade Control",
+            icon: "fa-regular fa-blinds"
+        },
+        {
+            id: 6,
+            name: "Cameras",
+            icon: "fa-regular fa-video"
+        },
+        {
+            id: 10,
+            name: "Flip-Tops",
+            icon: "fa-regular fa-outlet"
+        },
+        {
+            id: 9,
+            name: "Air Media",
+            icon: "fa-regular fa-airplay"
+        },
+        {
+            id: 0,
+            name: "HDMI",
+            icon: "fa-kit fa-hdmi"
         }
     ]
 };
