@@ -16,4 +16,36 @@
     width: 60%;
     background-color: var(--surfaceColour);
     border-radius: var(--standardBorderRadius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-nav-bar {
+    //background-color: green;
+    padding: var(--largeSpacing) 0;
+    flex:1;
+    border-right: 1px solid var(--onSurfaceColour);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.right-content-area {
+    //background-color: red;
+    flex: 3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-option {
+    height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--onSurfaceColour);
 }
