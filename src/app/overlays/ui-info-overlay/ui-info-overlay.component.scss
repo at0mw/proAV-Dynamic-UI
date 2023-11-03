@@ -22,18 +22,17 @@
 }
 
 .left-nav-bar {
-    //background-color: green;
     padding: var(--largeSpacing) 0;
     flex:1;
     border-right: 1px solid var(--onSurfaceColour);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0.8;
 }
 
 .right-content-area {
-    //background-color: red;
     flex: 3;
     height: 100%;
     display: flex;

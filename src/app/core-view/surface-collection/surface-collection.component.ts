@@ -28,6 +28,8 @@ export class SurfaceCollectionComponent {
 
   updateSurfaces(value: string){
     console.log("Updates Surface Config: ", value);
+    if(!value) return;
+    
     try {
       const data = JSON.parse(value);
       if (data.surfaces && Array.isArray(data.surfaces)) {

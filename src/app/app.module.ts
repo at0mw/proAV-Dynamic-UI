@@ -4,20 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ThemeSelectorComponent } from './theme-selector/theme-selector.component';
-import { DisconnectOverlayComponent } from './disconnect-overlay/disconnect-overlay.component';
 
 import { WebXPanelService } from './services/web.xpanel.service';
 import { NgxProAVLibModule } from '@proav/angular-lib';
-import { DynamicModuleGridComponent } from './dynamic-module-grid/dynamic-module-grid.component';
 
 import { SurfaceCollectionComponent } from './core-view/surface-collection/surface-collection.component';
 import { HeaderBarComponent } from './core-view/header-bar/header-bar.component';
 import { ControlBarComponent } from './core-view/control-bar/control-bar.component';
 import { MainContentViewComponent } from './core-view/main-content-view/main-content-view.component';
-import { ConnectionOverlayComponent } from './core-view/connection-overlay/connection-overlay.component';
+import { ConnectionOverlayComponent } from './overlays/connection-overlay/connection-overlay.component';
 import { SourceSurfaceComponent } from './surface-types/source-surface/source-surface.component';
 import { FlipTopSurfaceComponent } from './surface-types/flip-top-surface/flip-top-surface.component';
-import { UiInfoOverlayComponent } from './ui-info-overlay/ui-info-overlay.component';
+import { UiInfoOverlayComponent } from './overlays/ui-info-overlay/ui-info-overlay.component';
+import { UiMenuComponent } from './ui-menu/ui-menu.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
 	webService.initializeWebXPanel();
@@ -27,8 +26,6 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 	declarations: [
 		AppComponent,
 		ThemeSelectorComponent,
-		DisconnectOverlayComponent,
-		DynamicModuleGridComponent,
 		SurfaceCollectionComponent,
 		HeaderBarComponent,
 		ControlBarComponent,
@@ -36,7 +33,8 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 		ConnectionOverlayComponent,
 		SourceSurfaceComponent,
 		FlipTopSurfaceComponent,
-		UiInfoOverlayComponent
+		UiInfoOverlayComponent,
+  UiMenuComponent
 	],
 	imports: [ BrowserModule, NgxProAVLibModule ],
 	providers: [

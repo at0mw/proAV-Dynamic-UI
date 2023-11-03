@@ -14,9 +14,7 @@
     </div>
 
     <div class="column right-column">
-        <div class="ui-info-menu button pulse-button" (click)="uiInfoMenuPressed($event)">
-            <i class="fa-regular fa-bars"></i>
-        </div>
+        <app-ui-menu class="ui-info-menu"></app-ui-menu>
         <div class="text-info">
             <div class="row">              
                 <h1 class="roomname-text primary-header">Meeting Room</h1>
@@ -28,4 +26,4 @@
     </div>
 </div>
 
-<app-ui-info-overlay [style.display]="uiInfoMenuActive ? 'block' : 'none'"></app-ui-info-overlay>
+<!-- <app-ui-info-overlay [style.display]="uiInfoMenuActive ? 'block' : 'none'"></app-ui-info-overlay> -->

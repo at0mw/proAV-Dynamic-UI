@@ -1,0 +1,20 @@
+<div class="ui-menu-content" (click)="uiInfoMenuPressed($event)">
+    <i class="ui-menu-button fa-regular fa-bars button pulse-button"></i>
+    <div [style.display]="uiInfoMenuActive ? 'block' : 'none'" class="ui-menu">      
+      <div class="caret-triangle"></div> 
+      <ul>
+        <li>
+          <div>Themes</div>
+          <i class="fa-regular fa-palette"></i>
+        </li>
+        <li>
+          <div>Notifications</div>
+          <i class="fa-regular fa-envelope"></i>
+        </li>
+        <li>
+          <div>System Info</div>
+          <i class="fa-regular fa-circle-info"></i>
+        </li>
+      </ul>
+    </div>
+</div>
