@@ -29,16 +29,3 @@
 .source-button-icon i {
 	padding: var(--smallSpacing);
 }
-
-.source-button:active {
-	animation: pulse 0.5s infinite ease-out;
-}
-
-@keyframes pulse {
-	from {
-		box-shadow: 0 0 0 0 var(--primaryVariant);
-	}
-	to {
-		box-shadow: 0 0 0 var(--mediumSpacing) transparent;
-	}
-}

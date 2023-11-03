@@ -93,16 +93,3 @@ $textDivWidth: 20%;
 	);
 	border-radius: var(--standardBorderRadius);
 }
-
-.retract-button:active {
-	animation: pulse 0.5s infinite ease-out;
-}
-
-@keyframes pulse {
-	from {
-		box-shadow: 0 0 0 0 var(--primaryVariant);
-	}
-	to {
-		box-shadow: 0 0 0 var(--mediumSpacing) transparent;
-	}
-}

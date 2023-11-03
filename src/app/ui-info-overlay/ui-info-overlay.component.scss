@@ -1,0 +1,19 @@
+.ui-info-overlay {
+    position: fixed;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: var(--overlayBlur);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui-info-menu {
+    height: 60%;
+    width: 60%;
+    background-color: var(--surfaceColour);
+    border-radius: var(--standardBorderRadius);
+}
