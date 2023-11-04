@@ -8,7 +8,6 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	background-image: url('assets/img/crestron-blur.png');
 	background-color: var(--backgroundColour);
 	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
@@ -54,6 +53,7 @@ body {
 	--largeSpacing: 20px;
 
 	--onBackgroundShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(255, 255, 255, 0.1);
+	//--overlayShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(0, 0, 0, 0.5);
 	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
@@ -65,6 +65,99 @@ body {
 	background-position: center;
 
 	--elevatedSurfaceColour: darken(var(--surfaceColour, 5%));
+
+	--iconPressSize: 44px;
+	--activeOpacity: 0.6;
+	background-image: url('assets/img/crestron-blur.png');
+}
+
+/*
+  Custom Styling - Light Theme
+*/
+.dark-theme {
+	--primaryColour: #353b48;
+	--onPrimaryColour: #fafaff;
+
+	--primaryVariant: #17bebb;
+	--onPrimaryVariant: #ffffff;
+
+	--secondaryColour: #fafaff;
+	--onSecondaryColour: #000000;
+
+	--secondaryVariant: #5fb49c;
+	--onSecondaryVariantColour: #ffffff;
+
+	--backgroundColour: #333333;
+	--surfaceColour: #444c59;
+	--elevatedSurfaceColour: darken(#111111, 5%);
+	//--backgroundAmbientLight: lighten(#333, 10%);
+
+	--onBackgroundColour: #ffffff;
+	--onSurfaceColour: #ffffff;
+
+	--errorColour: #ff2200;
+	--onErrorColour: #000000;
+	--successColour: #1bdf5c;
+
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
+	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
+	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
+	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
+
+	--moduleHeightUnit: 100px;
+	--moduleGridGap: 20px;
+	--moduleInnerPadding: 10px;
+
+	--standardBorderRadius: 5px;
+	--smallSpacing: 5px;
+	--mediumSpacing: 10px;
+	--largeSpacing: 20px;
+
+	--themeFont: system-ui;
+	
+	--iconPressSize: 44px;
+	--activeOpacity: 0.6;
+}
+
+/*
+  Custom Styling - Light Theme
+*/
+.light-theme {
+	--primaryColour: #faffff;
+	--onPrimaryColour: #000000;
+
+	--primaryVariant: #ff2200;
+	--onPrimaryVariant: #ffffff;
+
+	--secondaryColour: #353b48;
+	--onSecondaryColour: #fafaff;
+
+	--secondaryVariant: #1bdf5c;
+	--onSecondaryVariantColour: #ffffff;
+
+	--backgroundColour: #fafaff;
+	--surfaceColour: #ffffff;
+
+	--onBackgroundColour: #000000;
+	--onSurfaceColour: #000000;
+
+	--errorColour: #ff2200;
+	--onErrorColour: #000000;
+	--successColour: #1bdf5c;
+	
+	--standardBorderRadius: 5px;
+	--smallSpacing: 5px;
+	--mediumSpacing: 10px;
+	--largeSpacing: 20px;
+
+	--onBackgroundShadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -1px 15px rgba(255, 255, 255, 0.1);
+	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
+	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
+	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
+
+	--themeFont: monospace;
 
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;

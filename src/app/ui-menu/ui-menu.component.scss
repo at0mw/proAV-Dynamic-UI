@@ -18,13 +18,45 @@
 	background-color: var(--surfaceColour);
 	border-radius: var(--standardBorderRadius);
 	backdrop-filter: var(--surfaceBlur);
+  box-shadow: var(--onSurfaceShadow);
 	transform: translateX(-50%);
 	left: 50%;
 	top: calc(100% + var(--largeSpacing));
   font-size: large;
+  z-index: 101;
 }
 
-.caret-triangle {
+.themes-menu {
+	position: absolute;
+	background-color: var(--surfaceColour);
+	border-radius: var(--standardBorderRadius);
+	backdrop-filter: var(--surfaceBlur);
+  box-shadow: var(--onSurfaceShadow);
+	transform: translateX(-150%);
+	left: 50%;
+	top: calc(100% + var(--largeSpacing) + 42.67px);
+  font-size: large;
+  z-index: 100;
+}
+
+.theme-label {
+	grid-row: 1/ span 1;
+	grid-column: 1/ span 5;
+  overflow: hidden;
+	text-overflow: ellipsis;
+  max-width: calc(100% - 40px);
+}
+
+.theme-icon {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+	grid-row: 1/ span 1;
+	grid-column: 5/ span 1;
+  background-color: var(--primaryColour);
+}
+
+.ui-caret-triangle {
 	position: absolute;
 	top: calc(-1*var(--mediumSpacing));
 	left: 50%;
@@ -35,24 +67,6 @@
 	border-right: 10px solid transparent;
 	border-bottom: 10px solid var(--surfaceColour);
 }
-
-// .dropdown {
-//     position: relative;
-//   }
-
-//   .dropdown-toggle {
-//     cursor: pointer;
-//   }
-
-//   .dropdown-content {
-//     display: none;
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//     background-color: #f9f9f9;
-//     border: 1px solid #ccc;
-//     border-top: none;
-//   }
 
 ul {
 	list-style-type: none;
@@ -72,14 +86,6 @@ li {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	width: 200px;
-}
-
-li div {
-	grid-row: 1/ span 1;
-	grid-column: 1/ span 5;
-  overflow: hidden;
-	text-overflow: ellipsis;
-  max-width: calc(100% - 40px);
 }
 
 li i {

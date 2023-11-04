@@ -1,19 +1,37 @@
-<div class="ui-menu-content" (click)="uiInfoMenuPressed($event)">
-    <i class="ui-menu-button fa-regular fa-bars button pulse-button"></i>
+<div class="ui-menu-content">
+    <i class="ui-menu-button fa-regular fa-bars button pulse-button" (click)="uiInfoMenuPressed($event)"></i>
     <div [style.display]="uiInfoMenuActive ? 'block' : 'none'" class="ui-menu">      
-      <div class="caret-triangle"></div> 
+      <div class="ui-caret-triangle"></div> 
       <ul>
-        <li>
+        <li class="button" (click)="triggerShowSystemInfo()">
+          <div>System Info</div>
+          <i class="fa-regular fa-circle-info"></i>
+        </li>
+        <li class="button" (click)="triggerShowThemes()">
           <div>Themes</div>
           <i class="fa-regular fa-palette"></i>
         </li>
-        <li>
+        <li class="button" (click)="triggerShowNotifications()">
           <div>Notifications</div>
           <i class="fa-regular fa-envelope"></i>
         </li>
-        <li>
-          <div>System Info</div>
-          <i class="fa-regular fa-circle-info"></i>
+      </ul>
+    </div>
+
+    <div [style.display]="themesMenuActive ? 'block' : 'none'" class="themes-menu">      
+      <div class="theme-caret-triangle"></div> 
+      <ul>
+        <li class="button" (click)="changeTheme('default')">
+          <div class="theme-label">Default</div>
+          <div class="theme-icon default-theme"></div>
+        </li>
+        <li class="button" (click)="changeTheme('light')">
+          <div>Light</div>
+          <div class="theme-icon light-theme"></div>
+        </li>
+        <li class="button" (click)="changeTheme('dark')">
+          <div>Dark</div>
+          <div class="theme-icon dark-theme"></div>
         </li>
       </ul>
     </div>
