@@ -38,16 +38,17 @@ body {
 	--backgroundColour: rgba(0,0,0,0.2);
 	--surfaceColour: #4b657956;
 	--raisedSurfaceColour: #FAFAFF;
+	--onRaisedSurfaceColour: #000000;
 
 	--onBackgroundColour: #fafaff;
 	--onSurfaceColour: #FFFFFF;
-	--onRaisedSurfaceColour: #000000;
 
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 
 	--standardBorderRadius: 5px;
+	--standardButtonHeight: 50px;
 	--smallSpacing: 5px;
 	--mediumSpacing: 10px;
 	--largeSpacing: 20px;
@@ -69,6 +70,13 @@ body {
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;
 	background-image: url('assets/img/crestron-blur.png');
+
+	--buttonGradient: linear-gradient(
+		to right,
+		rgba(119, 160, 211, 0.1) 0%,
+		rgba(119, 160, 211, 0.2) 51%,
+		rgba(119, 160, 211, 0.4) 100%
+	);
 }
 
 /*
@@ -92,8 +100,14 @@ body {
 	--elevatedSurfaceColour: darken(#111111, 5%);
 	//--backgroundAmbientLight: lighten(#333, 10%);
 
+	--backgroundBlur: blur(40px);
+	--surfaceBlur: blur(40px);
+	--overlayBlur: blur(40px);
+
 	--onBackgroundColour: #ffffff;
 	--onSurfaceColour: #ffffff;
+	--raisedSurfaceColour: #FAFAFF;
+	--onRaisedSurfaceColour: #000000;
 
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
@@ -110,6 +124,7 @@ body {
 	--moduleInnerPadding: 10px;
 
 	--standardBorderRadius: 5px;
+	--standardButtonHeight: 50px;
 	--smallSpacing: 5px;
 	--mediumSpacing: 10px;
 	--largeSpacing: 20px;
@@ -118,6 +133,13 @@ body {
 	
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;
+
+	--buttonGradient: linear-gradient(
+		to right,
+		rgba(119, 160, 211, 0.1) 0%,
+		rgba(119, 160, 211, 0.2) 51%,
+		rgba(80, 90, 100, 0.4) 100%
+	);
 }
 
 /*
@@ -141,12 +163,20 @@ body {
 
 	--onBackgroundColour: #000000;
 	--onSurfaceColour: #000000;
+	--raisedSurfaceColour: #FAFAFF;
+	--onRaisedSurfaceColour: #000000;
+
+	
+	--backgroundBlur: blur(40px);
+	--surfaceBlur: blur(40px);
+	--overlayBlur: blur(40px);
 
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
 	
 	--standardBorderRadius: 5px;
+	--standardButtonHeight: 50px;
 	--smallSpacing: 5px;
 	--mediumSpacing: 10px;
 	--largeSpacing: 20px;
@@ -161,6 +191,13 @@ body {
 
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;
+
+	--buttonGradient: linear-gradient(
+		to right,
+		rgba(119, 160, 211, 0.1) 0%,
+		rgba(119, 160, 211, 0.2) 51%,
+		rgba(200, 200, 200, 0.4) 100%
+	);
 }
 
 .error-text {
@@ -187,4 +224,22 @@ body {
 	to {
 		box-shadow: 0 0 0 var(--mediumSpacing) transparent;
 	}
+}
+
+.box-button {
+	padding: var(--mediumSpacing);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-image: var(--buttonGradient);
+	border-radius: var(--standardBorderRadius);
+	position: relative;
+}
+
+.box-button .icon {
+	display: flex;
+	align-items: end;
+}
+.box-button .icon i {
+	padding: var(--smallSpacing);
 }

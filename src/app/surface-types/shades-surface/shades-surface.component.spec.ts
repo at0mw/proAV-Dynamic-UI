@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeSelectorComponent } from './theme-selector.component';
+import { ShadesSurfaceComponent } from './shades-surface.component';
 
-describe('ThemeSelectorComponent', () => {
-  let component: ThemeSelectorComponent;
-  let fixture: ComponentFixture<ThemeSelectorComponent>;
+describe('ShadesSurfaceComponent', () => {
+  let component: ShadesSurfaceComponent;
+  let fixture: ComponentFixture<ShadesSurfaceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ThemeSelectorComponent ]
+      declarations: [ ShadesSurfaceComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ThemeSelectorComponent);
+    fixture = TestBed.createComponent(ShadesSurfaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

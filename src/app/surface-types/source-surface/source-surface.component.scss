@@ -12,12 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-image: linear-gradient(
-		to right,
-		rgba(119, 160, 211, 0.1) 0%,
-		rgba(119, 160, 211, 0.2) 51%,
-		rgba(119, 160, 211, 0.4) 100%
-	);
+	background-image: var(--buttonGradient);
 	border-radius: var(--standardBorderRadius);
 	position: relative;
 }

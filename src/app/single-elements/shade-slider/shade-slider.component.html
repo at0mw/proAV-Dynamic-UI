@@ -1,0 +1,15 @@
+<div class="slider-container">
+    <div class="slider-input-area">
+      <div class="range-slider">
+        <div class="range-slider_line">
+          <div #sliderLine class="range-slider_line-fill" [style.height]="initialValue + '%'">
+            <div #sliderThumb id="slider_thumb:1" class="range-slider_thumb shade-slider-thumb scalable">
+              <div class="thumb-text">{{ initialValue }}</div>
+            </div>
+          </div>
+        </div>
+        <input #sliderInput class="range-slider_input"
+               type="range" [(ngModel)]="initialValue" [min]="0" [max]="100" (input)="sliderEvent($event)" (change)="sendSliderValue()" (dragstart)="preventDragEvent($event)">
+      </div>
+    </div>
+</div>

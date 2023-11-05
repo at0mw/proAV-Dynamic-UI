@@ -1,0 +1,51 @@
+<div class="shades-content-grid">
+    <div class="shade-sliders-grid">
+        <ng-container *ngFor="let slider of sliders; let idx = index">
+            <proAV-shade-slider
+              [initialValue]="slider.value"
+              [style.grid-row]="'1/ span 1'"
+              [style.grid-column]="getGridColumnSlider(idx)"
+            ></proAV-shade-slider>
+          </ng-container>
+    </div>
+    <div class="shade-presets-area">
+        <h3>Presets</h3>
+        <div class="shade-presets-grid">
+            <ng-container *ngFor="let preset of presets; let idx = index">
+                <div class="preset-button button pulse-button"
+                  [style.grid-row]="getGridRowPreset(idx)"
+                  [style.grid-column]="'1/ span 5'"
+                  (click)="presetTriggered(preset.id)"
+                >{{preset.label}}</div>
+            </ng-container>
+        </div>
+        <!-- <div class="preset-button button" (click)="demoButtonOne()">
+            Demo Button 1
+        </div>
+        <div class="preset-button button">
+            Demo Button 2
+        </div> -->
+    </div>
+    <!-- <proAV-shade-slider
+        [style.grid-row]="'5/ span 4'"
+        [style.grid-column]="'2/ span 1'"
+    ></proAV-shade-slider>
+    <proAV-shade-slider
+        [style.grid-row]="'5/ span 4'"
+        [style.grid-column]="'3/ span 1'"
+    ></proAV-shade-slider>
+    <proAV-shade-slider
+        [style.grid-row]="'5/ span 4'"
+        [style.grid-column]="'4/ span 1'"
+    ></proAV-shade-slider>
+    <proAV-shade-slider
+        [style.grid-row]="'5/ span 4'"
+        [style.grid-column]="'5/ span 1'"
+    ></proAV-shade-slider>
+    <proAV-shade-slider
+        [style.grid-row]="'5/ span 4'"
+        [style.grid-column]="'6/ span 1'"
+    ></proAV-shade-slider> -->
+</div>
+
+<!-- <proAV-shade-slider></proAV-shade-slider> -->

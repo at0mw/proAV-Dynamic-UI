@@ -1,0 +1,58 @@
+.air-media-content{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-info-text {
+    display: flex;
+    align-items: baseline;
+}
+
+.air-media-img{
+    width: 60%;
+}
+
+.box-button {
+    margin: 0 !important;
+    width: 160px !important;
+    height: 160px !important;
+}
+
+.top-area {
+    width: 80%;
+    text-align: center;
+}
+
+.bottom-area {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ap-code-area {
+    margin-bottom: 0;
+}
+
+.second-tercile{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.third-tercile{        
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.first-tercile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
