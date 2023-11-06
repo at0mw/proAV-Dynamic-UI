@@ -1,0 +1,27 @@
+.presets-grid {
+    grid-row: 5/span 6;
+    grid-column: 7/span 5;
+}
+
+.ui-colour-select-container {
+    grid-row: 4/span 4;
+    grid-column: 2/span 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colour-wheel {
+    margin-bottom: var(--mediumSpacing);
+    height: 100%;
+    width: 100%;
+    border-radius: var(--standardBorderRadius);
+    //box-shadow: var(--mediumSpacing);
+}
+
+.lighting-colour-input {
+    opacity: 0;
+    border: 0.4vmin solid #303030ba;
+    height: 100%;
+    width: 100%;
+}
