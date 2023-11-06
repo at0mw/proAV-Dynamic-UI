@@ -67,6 +67,7 @@ body {
 
 	--elevatedSurfaceColour: darken(var(--surfaceColour, 5%));
 
+	--standardIconSize: 28px;
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;
 	background-image: url('assets/img/crestron-blur.png');
@@ -130,7 +131,8 @@ body {
 	--largeSpacing: 20px;
 
 	--themeFont: system-ui;
-	
+
+	--standardIconSize: 28px;
 	--iconPressSize: 44px;
 	--activeOpacity: 0.6;
 
@@ -208,10 +210,10 @@ body {
 	opacity: var(--activeOpacity);
 }
 
-.box-button {
-	height: 200px;
-	width: 200px;
-}
+// .box-button {
+// 	height: 200px;
+// 	width: 200px;
+// }
 
 .pulse-button:active {
 	animation: pulse 0.5s infinite ease-out;
@@ -238,8 +240,27 @@ body {
 
 .box-button .icon {
 	display: flex;
-	align-items: end;
+	align-items: flex-end;
 }
 .box-button .icon i {
 	padding: var(--smallSpacing);
+}
+
+.surface-content-grid {
+    display: grid;
+    height: 100%;
+    gap: var(--mediumSpacing);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.presets-grid {
+    padding: var(--mediumSpacing);
+    display: grid;
+    height: 300px;
+    gap: var(--mediumSpacing);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
+    overflow-x: visible;
+    overflow-y: scroll;
 }

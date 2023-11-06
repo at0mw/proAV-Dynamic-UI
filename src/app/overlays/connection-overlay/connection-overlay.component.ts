@@ -15,8 +15,6 @@ export class ConnectionOverlayComponent {
   infoText = "";
 
   constructor(private eventService: ConnectionEventService) {
-    console.log("Is Production", environment.production);
-    console.log("Is Production", this.isOverlayVisible);
     this.eventService.onConnected().subscribe(() => this.clientConnected());
     this.eventService.onDisconnected().subscribe(() => this.clientDisconnected());
     this.eventService.onConnecting().subscribe(() => this.clientConnecting());
@@ -24,7 +22,7 @@ export class ConnectionOverlayComponent {
   }
 
   clientConnected() {
-    console.log("Disable overlay...");
+    //console.log("Disable overlay...");
     this.isOverlayVisible = false;
     this.currentIcon = 'fa-kit fa-solid-wifi-circle-check';
     this.connectionState = "Connected";
@@ -33,7 +31,7 @@ export class ConnectionOverlayComponent {
   }
 
   clientDisconnected() {
-    console.log("Enable overlay...");
+    //console.log("Enable overlay...");
     this.isOverlayVisible = true;
     this.currentIcon = 'fa-kit fa-solid-wifi-circle-xmark';
     this.connectionState = "Disconnected";

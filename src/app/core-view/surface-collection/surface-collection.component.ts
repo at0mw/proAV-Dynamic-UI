@@ -1,7 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import { SurfaceConfig } from 'src/app/protocol/interfaces/interface.index';
-import { testSurfaceConfig } from 'src/app/testing-values/test-surfaces-msg';
 import { SurfaceType } from 'src/app/protocol/enums/enum.index';
+import { StringJoins } from 'src/app/protocol/constants/string-joins';
+import { environment } from 'src/app/protocol/environments/environment';
+import { testSurfaceConfig } from 'src/app/testing-values/test-surfaces-msg';
 
 declare var CrComLib: any;
 
@@ -11,24 +13,29 @@ declare var CrComLib: any;
   styleUrls: ['./surface-collection.component.scss']
 })
 export class SurfaceCollectionComponent {
+  constructor() {
+    if (!environment.production) {
+      this.surfaces = testSurfaceConfig.surfaces.map(surface => {
+        return {
+          id: surface.id,
+          name: surface.name,
+          icon: surface.icon
+        };
+      });
+    }
+  }
   SurfaceType = SurfaceType;
-  surfaces: SurfaceConfig[] = testSurfaceConfig.surfaces.map(surface => {
-    return {
-        id: surface.id,
-        name: surface.name,
-        icon: surface.icon
-    };
-  });
+  surfaces?: SurfaceConfig[] | null;
   touchStartX: number = 0;
   expandedSurface: SurfaceConfig | null = null;
 
   ngOnInit() {
-    CrComLib.subscribeState('s', "1", (value: string) => this.updateSurfaces(value));
+    CrComLib.subscribeState('s', StringJoins.SurfaceConfigJoin, (value: string) => this.updateSurfaces(value));
   }
 
   updateSurfaces(value: string){
-    console.log("Updates Surface Config: ", value);
     if(!value) return;
+    console.log(`CrComLib :::: Received Update ::: Serial :: Join ${StringJoins.SurfaceConfigJoin} : Value ${value}`);
     
     try {
       const data = JSON.parse(value);
@@ -68,7 +75,7 @@ export class SurfaceCollectionComponent {
   }
   
   shiftExpandedSurfaceRight() {
-    if(this.expandedSurface) {
+    if(this.expandedSurface && this.surfaces) {
       const currentIndex = this.surfaces.findIndex(surface => surface === this.expandedSurface);
       const nextIndex = currentIndex + 1;
       if(nextIndex !== this.surfaces.length) {
@@ -78,7 +85,7 @@ export class SurfaceCollectionComponent {
   }
 
   shiftExpandedSurfaceLeft() {
-    if(this.expandedSurface) {
+    if(this.expandedSurface && this.surfaces) {
       const currentIndex = this.surfaces.findIndex(surface => surface === this.expandedSurface);
       const previousIndex = currentIndex - 1;
       if(previousIndex !== -1) {

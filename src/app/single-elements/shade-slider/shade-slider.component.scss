@@ -23,29 +23,35 @@
 	width: 100%;
 	height: 100%;
 	border-radius: var(--mediumSpacing);
-}
-
-.range-slider_line {
-	height: 100%;
-	width: 80%;
-	background-color: var(--surfaceColour);
-	position: absolute;
-	z-index: 1;
-	border-radius: var(--mediumSpacing);
+	transform: rotate(180deg);
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 }
 
+.range-slider_line {
+	height: 100%;
+	width: 84%;
+	background-color: var(--surfaceColour);
+	position: absolute;
+	z-index: 1;
+	//border-radius: var(--mediumSpacing);
+}
+
 .range-slider_line-fill {
 	position: absolute;
-	width: 100%;
+	width: 90%;
 	background-color: var(--primaryVariant);
 	box-shadow: -2px 2px 4px rgba(var(--primaryVariant), 0.4), -2px -2px 4px rgba(var(--primaryVariant), 0.4);
-	border-bottom-left-radius: var(--mediumSpacing);
-	border-bottom-right-radius: var(--mediumSpacing);
+	//border-bottom-left-radius: var(--mediumSpacing);
+	//border-bottom-right-radius: var(--mediumSpacing);
 	z-index: 2;
-	transition: height 1s ease-in-out;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(119, 160, 211, 0.1) 0%,
+		rgba(119, 160, 211, 0.2) 51%,
+		rgba(80, 90, 100, 0.4) 100%
+	);
 }
 
 .range-slider_input {
@@ -59,7 +65,7 @@
 	height: 100%;
 	opacity: 0;
 	margin: 0;
-	appearance: slider-vertical;
+	writing-mode: vertical-lr;
 }
 
 .range-slider_thumb {
@@ -88,6 +94,7 @@
 	font-weight: 700;
 	font-size: small;
 	opacity: 0;
+	transform: rotate(180deg);
 }
 
 .scalable {
@@ -99,9 +106,31 @@
 .scalable.active {
 	transition: transform 0.2s;
 	transition: height 0.2s;
-  	height: 30px;
+	height: 30px;
 	transform: translateY(-100%) scale(1);
 }
+
+.animate-motion {
+	transition: height 1s ease-in-out;
+}
+
+// .roller-blinds-grid {
+// 	display: grid;
+// 	height: 100%;
+// 	width: 100%;
+//     grid-template-columns: repeat(1, 1fr);
+//     grid-template-rows: repeat(20, 1fr);
+// }
+// .roller-blind-item {
+// 	height: 90%;
+// 	width: 100%;
+// 	background-image: linear-gradient(
+// 		to bottom,
+// 		rgba(119, 160, 211, 0.1) 0%,
+// 		rgba(119, 160, 211, 0.2) 51%,
+// 		rgba(80, 90, 100, 0.4) 100%
+// 	);
+// }
 
 @keyframes growIn {
 	from {

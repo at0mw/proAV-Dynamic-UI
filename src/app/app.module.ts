@@ -20,6 +20,7 @@ import { UiMenuComponent } from './ui-menu/ui-menu.component';
 import { AirMediaSurfaceComponent } from './surface-types/air-media-surface/air-media-surface.component';
 import { ShadesSurfaceComponent } from './surface-types/shades-surface/shades-surface.component';
 import { ShadeSliderComponent } from './single-elements/shade-slider/shade-slider.component';
+import { LightingSurfaceComponent } from './surface-types/lighting-surface/lighting-surface.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
 	webService.initializeWebXPanel();
@@ -39,7 +40,8 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 		UiMenuComponent,
 		AirMediaSurfaceComponent,
 		ShadesSurfaceComponent,
-		ShadeSliderComponent
+		ShadeSliderComponent,
+  LightingSurfaceComponent
 	],
 	imports: [ FormsModule, BrowserModule, NgxProAVLibModule ],
 	providers: [

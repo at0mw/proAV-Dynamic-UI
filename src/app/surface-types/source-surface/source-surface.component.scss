@@ -7,20 +7,7 @@
 	gap: var(--largeSpacing);
 }
 
-.source-button {
-	padding: var(--mediumSpacing);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-image: var(--buttonGradient);
-	border-radius: var(--standardBorderRadius);
-	position: relative;
-}
-
-.source-button-icon {
-	display: flex;
-	align-items: end;
-}
-.source-button-icon i {
-	padding: var(--smallSpacing);
+.box-button {
+	height: 200px;
+	width: 200px;
 }

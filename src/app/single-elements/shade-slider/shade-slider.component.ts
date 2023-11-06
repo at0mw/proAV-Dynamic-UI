@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import { MessageService, ActionType, ModuleUpdateMessage, MessageType } from '@proav/angular-lib';
+import { AnalogJoins } from 'src/app/protocol/constants/analog-joins';
+import { StringJoins } from 'src/app/protocol/constants/string-joins';
 
 declare var CrComLib: any;
 @Component({
@@ -11,34 +13,18 @@ export class ShadeSliderComponent {
   @ViewChild('sliderInput') sliderInput!: ElementRef;
   @ViewChild('sliderThumb') sliderThumb!: ElementRef;
   @ViewChild('sliderLine') sliderLine!: ElementRef;
+
   @Input() initialValue: number = 0;
-  //@Input() width: string = '100%';
-  
-  // TODO Input correctly
-  @Input() moduleId: string = "";
+  @Input() joinId: string = "";
   @Input() elementId: string = "";
 
-  ngOnInit() {
-    this.checkIfModuleIdProvided();
-    this.checkIfElementIdProvided();
+  animateSliderMotion: Boolean = true;
 
-    if(this.moduleId === "" && this.elementId !== "") {
-      console.log('Slider Element Subscribing to CrComLib Join ID', this.elementId.toString());
-      CrComLib.subscribeState('n', this.elementId.toString(), (value: number) => this.updateSliderValue(value));
-    }
-  }
-
-  checkIfModuleIdProvided(): void {
-    if (this.moduleId === "") {
-      console.log('Module ID is not provided.');
-      // console.error('Module ID is not provided for Slider Element!')
-    } else {      
-      console.log('Slider Module ID is provided : ', this.moduleId);
-    }
+  ngOnChanges() {
+    this.animateSliderMotion = true;
   }
 
   sliderEvent(event: Event) {
-    console.log("Is this happening?");
     event.stopPropagation();
     event.preventDefault();
     this.updateSliderVisuals(true);
@@ -47,15 +33,6 @@ export class ShadeSliderComponent {
   preventDragEvent(event: Event) {
     event.preventDefault();
     event.stopPropagation();
-  }
-
-  checkIfElementIdProvided(): void {
-    if (this.elementId === "") {
-      console.log('Element ID is not provided.');
-      // console.error('Element ID is not provided for Slider Element!')
-    } else {      
-      console.log('Slider Element ID is provided : ', this.elementId);
-    }
   }
 
   thumbActive: boolean = false;
@@ -82,6 +59,9 @@ export class ShadeSliderComponent {
     if (sliderInput && sliderThumb && sliderLine) {
       if(showThumb){
         this.showThumbStatus(sliderThumb, sliderInput);
+        this.animateSliderMotion = false;
+      } else {
+        this.animateSliderMotion = true;
       }
 
       this.updateVisualsPositioning(sliderInput, sliderLine);
@@ -109,19 +89,12 @@ export class ShadeSliderComponent {
     sliderLine.style.height = sliderInput.value + '%';
   }
 
-  // If a single slider then use elementId as join?
   sendSliderValue() {
-    console.log('Final Slider Value: ', this.initialValue);
-    if(this.moduleId === ""){
-      this.messageService.sendAnalogMessage(this.elementId, this.initialValue);
-    } else {      
-      const message: ModuleUpdateMessage = {
-        messagetype: MessageType.ModuleUpdate,
-        moduleid: parseInt(this.moduleId, 10),
-        elementid: parseInt(this.elementId, 10),
-        action: ActionType.Press
-      };
-      this.messageService.sendJsonMessage(JSON.stringify(message));
-    }
+    let jsonMessage = {
+			id: this.elementId,
+			value: this.initialValue
+		};
+    let jsonMessageString = JSON.stringify(jsonMessage);
+    this.messageService.sendStringMessage(this.joinId, jsonMessageString);
   }
 }

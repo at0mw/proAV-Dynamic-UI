@@ -1,0 +1,11 @@
+<div class="surface-content-grid">
+    <div class="presets-grid">
+        <ng-container *ngFor="let preset of presets; let idx = index">
+            <div class="preset-button button pulse-button"
+              [style.grid-row]="getGridRowPreset(idx)"
+              [style.grid-column]="'1/ span 5'"
+              (click)="presetTriggered(preset.id)"
+            ><h3>{{preset.label}}</h3></div>
+        </ng-container>
+    </div>
+</div>
