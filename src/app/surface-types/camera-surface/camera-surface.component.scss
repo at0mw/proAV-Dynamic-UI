@@ -1,4 +1,4 @@
-.dpad {    
+.dpad {
     grid-row: 3/span 4;
     grid-column: 2/span 4;
 }
@@ -14,22 +14,22 @@
 }
 
 .stop-button {
-    grid-row: 8/span 1;
+    grid-row: 9/span 1;
     grid-column: 2/span 2;
 }
 
 .start-button {
-    grid-row: 8/span 1;
+    grid-row: 9/span 1;
     grid-column: 4/span 2;
 }
 
 .sleep-button {
-    grid-row: 9/span 1;
+    grid-row: 10/span 1;
     grid-column: 2/span 2;
 }
 
 .wake-button {
-    grid-row: 9/span 1;
+    grid-row: 10/span 1;
     grid-column: 4/span 2;
 }
 
