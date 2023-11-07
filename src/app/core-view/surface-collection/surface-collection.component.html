@@ -15,6 +15,7 @@
                 <div *ngIf="surface.id === SurfaceType.AirMedia; then airMediaSurfaceBlock"></div>
                 <div *ngIf="surface.id === SurfaceType.FlipTops; then flipTopSurfaceBlock"></div>
                 <div *ngIf="surface.id === SurfaceType.Display; then displaySurfaceBlock"></div>			
+                <div *ngIf="surface.id === SurfaceType.HDMI; then hdmiSurfaceBlock"></div>			
         </div>
         <div class="experiment">
             <div class="surface-icon">
@@ -41,7 +42,7 @@
     <app-source-surface></app-source-surface>
 </ng-template>
 <ng-template #cameraSurfaceBlock>
-
+    <app-camera-surface></app-camera-surface>
 </ng-template>
 <ng-template #matrixSurfaceBlock>
 
@@ -59,4 +60,7 @@
 </ng-template>
 <ng-template #displaySurfaceBlock>
 
+</ng-template>
+<ng-template #hdmiSurfaceBlock>
+    <app-hdmi-surface></app-hdmi-surface>
 </ng-template>

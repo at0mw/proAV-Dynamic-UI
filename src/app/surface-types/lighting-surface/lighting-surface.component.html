@@ -1,8 +1,26 @@
 <div class="surface-content-grid">
-    <div class="ui-colour-select-container">
-        <div class="colour-wheel">
-            <input type="color" id="lighting-colour-select" class="lighting-colour-input">
+    <!-- Colour Select Wheel -->
+    <div class="content-title colour-select-title">
+        <h2>Colour Select</h2>
+    </div>
+    <div class="ui-colour-select-container" (touchstart)="handleTouchEvents($event)" (touchmove)="handleTouchEvents($event)">
+        <div class="colour-wheel" [style.background-color]="colourInput">
+            <input [(ngModel)]="colourInput" type="color" class="lighting-colour-input" (input)="handleUpdateColourVisuals($event)">
         </div>
+    </div>
+    <!-- Brightness Slider -->    
+    <div class="content-title brightness-title">
+        <h2>Brightness</h2>
+    </div>
+    <proAV-slider-element 
+        class="brightness-slider" 
+        (touchstart)="handleTouchEvents($event)" 
+        (touchmove)="handleTouchEvents($event)"    
+        [elementId]="brightnessSliderJoin">
+    </proAV-slider-element>
+    <!-- Presets Area -->
+    <div class="content-title preset-title">
+        <h2>Presets</h2>
     </div>
     <div class="presets-grid">
         <ng-container *ngFor="let preset of presets; let idx = index">

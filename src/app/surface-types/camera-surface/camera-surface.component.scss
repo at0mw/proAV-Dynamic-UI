@@ -1,0 +1,78 @@
+.dpad {    
+    grid-row: 3/span 4;
+    grid-column: 2/span 4;
+}
+
+.zoom-in-button {
+    grid-row: 7/span 1;
+    grid-column: 5/span 1;
+}
+
+.zoom-out-button {
+    grid-row: 7/span 1;
+    grid-column: 2/span 1;    
+}
+
+.stop-button {
+    grid-row: 8/span 1;
+    grid-column: 2/span 2;
+}
+
+.start-button {
+    grid-row: 8/span 1;
+    grid-column: 4/span 2;
+}
+
+.sleep-button {
+    grid-row: 9/span 1;
+    grid-column: 2/span 2;
+}
+
+.wake-button {
+    grid-row: 9/span 1;
+    grid-column: 4/span 2;
+}
+
+.zoom-button {
+    justify-content: center;
+}
+
+.control-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-button h3 {
+    margin: 0;
+}
+
+.button .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-presets-grid {
+    grid-row: 7/span 4;
+    grid-column: 7/span 5;
+}
+
+.camera-options-grid {
+    grid-row: 3/span 3;
+    grid-column: 7/span 5;    
+}
+
+/*
+*   Handle Title Postitions
+*/
+.camera-options-title {
+    grid-row: 2/span 1;
+    grid-column: 7/span 4;
+}
+
+.preset-title {
+    grid-row: 6/span 1;
+    grid-column: 7/span 4;
+}

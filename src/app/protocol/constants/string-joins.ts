@@ -9,6 +9,10 @@ export const StringJoins = {
     LightingPresetUpdate: "16",
     LightingColourInfo: "17",
 
+    CameraOptionsConfig: "30",
+    CameraPresetsConfig: "31",
+    CameraPresetsUpdate: "32",
+
     
 	// Air-Media Joins - ID 9
 	AirMediaInfoUpdate: '45',

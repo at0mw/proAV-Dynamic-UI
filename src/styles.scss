@@ -228,6 +228,10 @@ body {
 	}
 }
 
+.button i {
+	font-size: var(--standardIconSize);
+}
+
 .box-button {
 	padding: var(--mediumSpacing);
 	display: flex;
@@ -257,10 +261,10 @@ body {
 .presets-grid {
     padding: var(--mediumSpacing);
     display: grid;
-    height: 300px;
+    //height: 300px;
     gap: var(--mediumSpacing);
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
+    //grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
     overflow-x: visible;
     overflow-y: scroll;
 }
@@ -275,4 +279,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content-title {
+    display: flex;
+    align-items: flex-end;
+}
+
+.content-title h2 {
+    margin: 0;
 }

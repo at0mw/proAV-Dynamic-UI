@@ -89,21 +89,21 @@ export class ShadesSurfaceComponent {
     }
   }
 
-  updateShadeValue(value: string) {;
-    if(!value) return;
-    console.log(`CrComLib :::: Received Update ::: Serial :: Join ${StringJoins.ShadeSlidersUpdate} : Value ${value}`);
+  // updateShadeValue(value: string) {;
+  //   if(!value) return;
+  //   console.log(`CrComLib :::: Received Update ::: Serial :: Join ${StringJoins.ShadeSlidersUpdate} : Value ${value}`);
     
-    // try {
-    //   const data = JSON.parse(value);
-    //   if (data.surfaces && Array.isArray(data.sliders)) {
-    //     this.sliders = data.sliders as SliderConfig[];
-    //   } else {
-    //     console.error('Invalid JSON structure: surfaces property is missing or not an array.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error parsing JSON:', error);
-    // }
-  }
+  //   // try {
+  //   //   const data = JSON.parse(value);
+  //   //   if (data.surfaces && Array.isArray(data.sliders)) {
+  //   //     this.sliders = data.sliders as SliderConfig[];
+  //   //   } else {
+  //   //     console.error('Invalid JSON structure: surfaces property is missing or not an array.');
+  //   //   }
+  //   // } catch (error) {
+  //   //   console.error('Error parsing JSON:', error);
+  //   // }
+  // }
 
   allOpen() {
     this.messageService.sendActionMessage(DigitalJoins.ShadesAllOpen);
@@ -111,6 +111,10 @@ export class ShadesSurfaceComponent {
 
   allClose() {
     this.messageService.sendActionMessage(DigitalJoins.ShadesAllClose);
+  }
+
+  createPreset() {
+
   }
   
   getGridColumnSlider(index: number): string {

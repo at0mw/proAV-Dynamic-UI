@@ -1,0 +1,72 @@
+<div class="surface-content-grid">
+    <!-- Dpad Area -->
+    <proAV-dpad-module 
+        class="dpad"
+        [upJoin]="dpadUpJoin"
+        [downJoin]="dpadDownJoin"
+        [leftJoin]="dpadLeftJoin"
+        [rightJoin]="dpadRightJoin">
+    </proAV-dpad-module>
+    <!-- Zoom In and Out Control Area -->
+    <div class="box-button button pulse-button zoom-out-button zoom-button" (click)="zoomInAction()">
+        <div class="icon unclickable">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </div>
+    </div>
+    <div class="box-button button pulse-button zoom-in-button zoom-button" (click)="zoomOutAction()">
+        <div class="icon unclickable">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </div>
+    </div>
+    <!-- Camera Controls -->
+    <div class="box-button button pulse-button stop-button control-button" (click)="stopAction()">
+        <h3 class="text unclickable">Stop</h3>
+        <div class="icon unclickable">
+            <i class="fa-regular fa-stop"></i>
+        </div>
+    </div>
+    <div class="box-button button pulse-button start-button control-button" (click)="startAction()">
+        <h3 class="text unclickable">Start</h3>
+        <div class="icon unclickable">
+            <i class="fa-regular fa-play"></i>
+        </div>
+    </div>
+    <div class="box-button button pulse-button sleep-button control-button" (click)="sleepAction()">
+        <h3 class="text unclickable">Sleep</h3>
+        <div class="icon unclickable">
+            <i class="fa-regular fa-moon"></i>
+        </div>
+    </div>
+    <div class="box-button button pulse-button wake-button control-button" (click)="wakeAction()">
+        <h3 class="text unclickable">Wake</h3>
+        <div class="icon unclickable">
+            <i class="fa-regular fa-sunrise"></i>
+        </div>
+    </div>
+    <!-- Camera Options Area -->
+    <div class="content-title camera-options-title">
+        <h2>Camera Options</h2>
+    </div>
+    <div class="camera-options-grid presets-grid">
+        <ng-container *ngFor="let cameraOption of cameraOptions; let idx = index">
+            <div class="preset-button button pulse-button"
+              [style.grid-row]="getGridRowPreset(idx)"
+              [style.grid-column]="'1/ span 5'"
+              (click)="presetTriggered(cameraOption.id)"
+            ><h3>{{cameraOption.label}}</h3></div>
+        </ng-container>
+    </div>
+    <!-- Camera Presets Area -->
+    <div class="content-title preset-title">
+        <h2>Presets</h2>
+    </div>
+    <div class="presets-grid camera-presets-grid">
+        <ng-container *ngFor="let preset of presets; let idx = index">
+            <div class="preset-button button pulse-button"
+              [style.grid-row]="getGridRowPreset(idx)"
+              [style.grid-column]="'1/ span 5'"
+              (click)="presetTriggered(preset.id)"
+            ><h3>{{preset.label}}</h3></div>
+        </ng-container>
+    </div>
+</div>

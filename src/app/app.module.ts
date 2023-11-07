@@ -21,6 +21,8 @@ import { AirMediaSurfaceComponent } from './surface-types/air-media-surface/air-
 import { ShadesSurfaceComponent } from './surface-types/shades-surface/shades-surface.component';
 import { ShadeSliderComponent } from './single-elements/shade-slider/shade-slider.component';
 import { LightingSurfaceComponent } from './surface-types/lighting-surface/lighting-surface.component';
+import { CameraSurfaceComponent } from './surface-types/camera-surface/camera-surface.component';
+import { HdmiSurfaceComponent } from './surface-types/hdmi-surface/hdmi-surface.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
 	webService.initializeWebXPanel();
@@ -41,7 +43,9 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 		AirMediaSurfaceComponent,
 		ShadesSurfaceComponent,
 		ShadeSliderComponent,
-  LightingSurfaceComponent
+		LightingSurfaceComponent,
+		CameraSurfaceComponent,
+ 		HdmiSurfaceComponent
 	],
 	imports: [ FormsModule, BrowserModule, NgxProAVLibModule ],
 	providers: [

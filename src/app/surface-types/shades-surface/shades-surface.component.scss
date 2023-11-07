@@ -8,7 +8,7 @@
 }
 
 .presets-grid {
-    grid-row: 7/span 6;
+    grid-row: 7/span 4;
     grid-column: 7/span 5;
 }
 
@@ -40,12 +40,7 @@
     grid-column: 2/span 4;
 }
 
-// .shade-controls-area {
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     grid-row: 6/span 6;
-//     grid-column: 2/span 6;
-// }
+.preset-title {
+    grid-row: 6/span 1;
+    grid-column: 7/span 4;
+}

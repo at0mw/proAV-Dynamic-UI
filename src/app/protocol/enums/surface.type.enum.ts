@@ -10,5 +10,6 @@ export enum SurfaceType {
     Power = 8,
     AirMedia = 9,
     FlipTops = 10,
-    Display = 11
+    Display = 11,
+    HDMI = 12
 }

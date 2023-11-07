@@ -31,7 +31,7 @@ export const testSurfaceConfig = {
             icon: "fa-regular fa-airplay"
         },
         {
-            id: 0,
+            id: 12,
             name: "HDMI",
             icon: "fa-kit fa-hdmi"
         }

@@ -1,4 +1,5 @@
 <div class="surface-content-grid">
+    <!-- Sliders Area -->
     <div class="shade-sliders-grid">
         <ng-container *ngFor="let slider of sliders; let idx = index">
             <proAV-shade-slider
@@ -10,6 +11,10 @@
             ></proAV-shade-slider>
           </ng-container>
     </div>
+    <!-- Presets Area -->
+    <div class="content-title preset-title">
+        <h2>Presets</h2>
+    </div>
     <div class="presets-grid">
         <ng-container *ngFor="let preset of presets; let idx = index">
             <div class="preset-button button pulse-button"
@@ -19,6 +24,7 @@
             ><h3>{{preset.label}}</h3></div>
         </ng-container>
     </div>
+    <!-- Box Controls -->
     <div class="box-button button pulse-button open-button" (click)="allOpen()">
         <h3 class="text unclickable">All Open</h3>
         <div class="icon unclickable">
@@ -31,7 +37,7 @@
             <i class="fa-regular fa-blinds"></i>
         </div>
     </div>
-    <div class="box-button button pulse-button create-preset-button" (click)="allClose()">
+    <div class="box-button button pulse-button create-preset-button" (click)="createPreset()">
         <h3 class="text unclickable">Create Preset</h3>
         <div class="icon unclickable">
             <i class="fa-regular fa-plus"></i>
