@@ -1,13 +1,13 @@
-.source-content {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: var(--largeSpacing);
+.hdmi-button {
+    grid-row: 5/span 3;
+    grid-column: 4/span 3;
+}
+
+.air-media-button {
+    grid-row: 5/span 3;
+    grid-column: 7/span 3;
 }
 
 .box-button {
-	height: 200px;
-	width: 200px;
+    text-align: left;
 }

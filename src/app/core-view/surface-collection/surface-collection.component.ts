@@ -4,6 +4,8 @@ import { SurfaceType } from 'src/app/protocol/enums/enum.index';
 import { StringJoins } from 'src/app/protocol/constants/string-joins';
 import { environment } from 'src/app/protocol/environments/environment';
 import { testSurfaceConfig } from 'src/app/testing-values/test-surfaces-msg';
+import { AnalogJoins } from 'src/app/protocol/constants/analog-joins';
+import { MessageService } from '@proav/angular-lib';
 
 declare var CrComLib: any;
 
@@ -13,7 +15,13 @@ declare var CrComLib: any;
   styleUrls: ['./surface-collection.component.scss']
 })
 export class SurfaceCollectionComponent {
-  constructor() {
+  SurfaceType = SurfaceType;
+  surfaces?: SurfaceConfig[] | null;
+  touchStartX: number = 0;
+  expandedSurface: SurfaceConfig | null = null;
+  targetActiveSurface: number = 0;
+
+  constructor(private messageService: MessageService) {
     if (!environment.production) {
       this.surfaces = testSurfaceConfig.surfaces.map(surface => {
         return {
@@ -24,13 +32,21 @@ export class SurfaceCollectionComponent {
       });
     }
   }
-  SurfaceType = SurfaceType;
-  surfaces?: SurfaceConfig[] | null;
-  touchStartX: number = 0;
-  expandedSurface: SurfaceConfig | null = null;
 
   ngOnInit() {
     CrComLib.subscribeState('s', StringJoins.SurfaceConfigJoin, (value: string) => this.updateSurfaces(value));
+    CrComLib.subscribeState('n', AnalogJoins.ActiveSurfaceId, (value: number) => this.updateActiveSurface(value));
+  }
+
+  updateActiveSurface(targetSurfaceId: number) {
+    console.log(`CrComLib :::: Received Update ::: Analog :: Join ${StringJoins.SurfaceConfigJoin} : Value ${targetSurfaceId}`);
+    if(!this.surfaces) return;
+    this.targetActiveSurface = targetSurfaceId;
+    const foundSurface = this.surfaces.find(surface => surface.id === targetSurfaceId);
+    
+    if(!foundSurface) return;
+
+    this.expandedSurface = foundSurface;
   }
 
   updateSurfaces(value: string){
@@ -47,10 +63,17 @@ export class SurfaceCollectionComponent {
     } catch (error) {
       console.error('Error parsing JSON:', error);
     }
+
+    if(this.targetActiveSurface !== 0) {
+      this.updateActiveSurface(this.targetActiveSurface)
+    }
   }
 
   toggleExpansion(surface: SurfaceConfig) {
-    this.expandedSurface = surface;
+    if(this.expandedSurface !== surface){
+      this.expandedSurface = surface;
+      this.sendActiveSurfaceUpdate(this.expandedSurface.id);
+    }
   }
 
   @HostListener('touchstart', ['$event'])
@@ -80,6 +103,7 @@ export class SurfaceCollectionComponent {
       const nextIndex = currentIndex + 1;
       if(nextIndex !== this.surfaces.length) {
         this.expandedSurface = this.surfaces[nextIndex];
+        this.sendActiveSurfaceUpdate(this.expandedSurface.id);
       }
     }
   }
@@ -90,7 +114,12 @@ export class SurfaceCollectionComponent {
       const previousIndex = currentIndex - 1;
       if(previousIndex !== -1) {
         this.expandedSurface = this.surfaces[previousIndex];
+        this.sendActiveSurfaceUpdate(this.expandedSurface.id);
       }
     }
+  }
+
+  sendActiveSurfaceUpdate(activeSurfaceId: number) {
+    this.messageService.sendAnalogMessage(AnalogJoins.ActiveSurfaceId, activeSurfaceId);
   }
 }

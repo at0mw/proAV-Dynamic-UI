@@ -3,7 +3,7 @@ export const testSurfaceConfig = {
         {
             id: 5,
             name: "Source Select",
-            icon: "fa-regular fa-arrow-up-from-bracket"
+            icon: "fa-regular fa-arrow-down-to-square fa-rotate-270"
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ export const testSurfaceConfig = {
         {
             id: 9,
             name: "Air Media",
-            icon: "fa-regular fa-airplay"
+            icon: "fa-regular fa-screencast"
         },
         {
             id: 12,

@@ -71,11 +71,12 @@
 .range-slider_thumb {
 	width: 100%;
 	height: 6px;
-	border: 4px solid var(--onRaisedSurfaceColour);
+	border-left: 4px solid var(--onPrimaryColour);
+	border-right: 4px solid var(--onPrimaryColour);
 	position: absolute;
 	right: -4px; /* Keep the thumb in position at the end of the fill div and account for fill height*/
 	top: 0;
-	background-color: var(--raisedSurfaceColour);
+	background-color: var(--onPrimaryColour);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -86,51 +87,48 @@
 
 .range-slider_thumb.active {
 	box-shadow: var(--onSurfaceShadow), -8px -8px 16px rgba(var(--primaryVariant), 0.2);
-	//border: 4px solid var(--primaryVariant);
 	z-index: 4;
 }
 
 .thumb-text {
-	font-weight: 700;
+	//font-weight: 700;
 	font-size: small;
 	opacity: 0;
 	transform: rotate(180deg);
+	position: absolute;
+	top: - 50px;
+	color: var(--onPrimaryColour);
 }
 
-.scalable {
-	transition: transform 0.5s;
-	transition: height 0.5s;
-	transform: translateY(-90%) scale(1);
-}
-
-.scalable.active {
-	transition: transform 0.2s;
-	transition: height 0.2s;
-	height: 30px;
-	transform: translateY(-100%) scale(1);
+.blinds-ring {
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	border: 2px solid var(--onPrimaryColour);
+	position: absolute;
+	top: - 12px;
 }
 
 .animate-motion {
 	transition: height 1s ease-in-out;
 }
 
-// .roller-blinds-grid {
-// 	display: grid;
-// 	height: 100%;
-// 	width: 100%;
-//     grid-template-columns: repeat(1, 1fr);
-//     grid-template-rows: repeat(20, 1fr);
-// }
-// .roller-blind-item {
-// 	height: 90%;
-// 	width: 100%;
-// 	background-image: linear-gradient(
-// 		to bottom,
-// 		rgba(119, 160, 211, 0.1) 0%,
-// 		rgba(119, 160, 211, 0.2) 51%,
-// 		rgba(80, 90, 100, 0.4) 100%
-// 	);
-// }
+.moving-up {
+	opacity: 1;
+	position: absolute;
+	top: 32px;
+}
+
+.moving-down {
+	opacity: 1;
+	position: absolute;
+	top: -32px;
+	transform: rotate(180deg);
+}
+
+.direction-arrow {
+	//opacity: 0;	
+}
 
 @keyframes growIn {
 	from {

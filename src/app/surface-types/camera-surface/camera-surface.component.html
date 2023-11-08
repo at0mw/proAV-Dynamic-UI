@@ -20,28 +20,28 @@
     </div>
     <!-- Camera Controls -->
     <div class="box-button button pulse-button stop-button control-button" (click)="stopAction()">
-        <h3 class="text unclickable">Stop</h3>
-        <div class="icon unclickable">
+        <div class="text unclickable">Stop Auto Switch</div>
+        <!-- <div class="icon unclickable">
             <i class="fa-regular fa-stop"></i>
-        </div>
+        </div> -->
     </div>
     <div class="box-button button pulse-button start-button control-button" (click)="startAction()">
-        <h3 class="text unclickable">Start</h3>
-        <div class="icon unclickable">
+        <div class="text unclickable">Start Auto Switch</div>
+        <!-- <div class="icon unclickable">
             <i class="fa-regular fa-play"></i>
-        </div>
+        </div> -->
     </div>
     <div class="box-button button pulse-button sleep-button control-button" (click)="sleepAction()">
-        <h3 class="text unclickable">Sleep</h3>
-        <div class="icon unclickable">
+        <div class="text unclickable">Sleep</div>
+        <!-- <div class="icon unclickable">
             <i class="fa-regular fa-moon"></i>
-        </div>
+        </div> -->
     </div>
     <div class="box-button button pulse-button wake-button control-button" (click)="wakeAction()">
-        <h3 class="text unclickable">Wake</h3>
-        <div class="icon unclickable">
+        <div class="text unclickable">Wake</div>
+        <!-- <div class="icon unclickable">
             <i class="fa-regular fa-sunrise"></i>
-        </div>
+        </div> -->
     </div>
     <!-- Camera Options Area -->
     <div class="content-title camera-options-title">
@@ -53,7 +53,7 @@
               [style.grid-row]="getGridRowPreset(idx)"
               [style.grid-column]="'1/ span 5'"
               (click)="presetTriggered(cameraOption.id)"
-            ><h3>{{cameraOption.label}}</h3></div>
+            ><div>{{cameraOption.label}}</div></div>
         </ng-container>
     </div>
     <!-- Camera Presets Area -->
@@ -66,7 +66,7 @@
               [style.grid-row]="getGridRowPreset(idx)"
               [style.grid-column]="'1/ span 5'"
               (click)="presetTriggered(preset.id)"
-            ><h3>{{preset.label}}</h3></div>
+            ><div>{{preset.label}}</div></div>
         </ng-container>
     </div>
 </div>

@@ -21,24 +21,24 @@
               [style.grid-row]="getGridRowPreset(idx)"
               [style.grid-column]="'1/ span 5'"
               (click)="presetTriggered(preset.id)"
-            ><h3>{{preset.label}}</h3></div>
+            ><div>{{preset.label}}</div></div>
         </ng-container>
     </div>
     <!-- Box Controls -->
     <div class="box-button button pulse-button open-button" (click)="allOpen()">
-        <h3 class="text unclickable">All Open</h3>
+        <div class="text unclickable">All Open</div>
         <div class="icon unclickable">
             <i class="fa-regular fa-blinds-raised"></i>
         </div>
     </div>
     <div class="box-button button pulse-button close-button" (click)="allClose()">
-        <h3 class="text unclickable">All Close</h3>
+        <div class="text unclickable">All Close</div>
         <div class="icon unclickable">
             <i class="fa-regular fa-blinds"></i>
         </div>
     </div>
     <div class="box-button button pulse-button create-preset-button" (click)="createPreset()">
-        <h3 class="text unclickable">Create Preset</h3>
+        <div class="text unclickable">Create Preset</div>
         <div class="icon unclickable">
             <i class="fa-regular fa-plus"></i>
         </div>

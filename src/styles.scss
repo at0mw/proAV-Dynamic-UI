@@ -11,7 +11,7 @@ body {
 	background-color: var(--backgroundColour);
 	color: var(--onPrimaryColour); /* Use a colon (:) instead of parentheses () */
 	font-family: var(--themeFont);
-    -webkit-tap-highlight-color: transparent; /* This may cause other issues - Removes Blue highlight on focus in chrome */
+	-webkit-tap-highlight-color: transparent; /* This may cause other issues - Removes Blue highlight on focus in chrome */
 	user-select: none; /* Stop highlighted text */
 }
 
@@ -35,13 +35,13 @@ body {
 	--secondaryVariant: #1f6764;
 	--onSecondaryVariantColour: #ffffff;
 
-	--backgroundColour: rgba(0,0,0,0.2);
+	--backgroundColour: rgba(0, 0, 0, 0.2);
 	--surfaceColour: #4b657956;
-	--raisedSurfaceColour: #FAFAFF;
+	--raisedSurfaceColour: #fafaff;
 	--onRaisedSurfaceColour: #000000;
 
 	--onBackgroundColour: #fafaff;
-	--onSurfaceColour: #FFFFFF;
+	--onSurfaceColour: #ffffff;
 
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
@@ -55,7 +55,7 @@ body {
 
 	--onBackgroundShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(255, 255, 255, 0.1);
 	//--overlayShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(0, 0, 0, 0.5);
-	--onSurfaceShadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.2);
+	//--onSurfaceShadow: 1px 1px 4px rgba(0, 0, 0, 0.2), -1px -1px 4px #4b657956;
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
 	--onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
 	--onSurfaceInsetShadow: inset 4px 3px 10px rgba(0, 0, 0, 0.5);
@@ -107,7 +107,7 @@ body {
 
 	--onBackgroundColour: #ffffff;
 	--onSurfaceColour: #ffffff;
-	--raisedSurfaceColour: #FAFAFF;
+	--raisedSurfaceColour: #fafaff;
 	--onRaisedSurfaceColour: #000000;
 
 	--errorColour: #ff2200;
@@ -165,10 +165,9 @@ body {
 
 	--onBackgroundColour: #000000;
 	--onSurfaceColour: #000000;
-	--raisedSurfaceColour: #FAFAFF;
+	--raisedSurfaceColour: #fafaff;
 	--onRaisedSurfaceColour: #000000;
 
-	
 	--backgroundBlur: blur(40px);
 	--surfaceBlur: blur(40px);
 	--overlayBlur: blur(40px);
@@ -176,7 +175,7 @@ body {
 	--errorColour: #ff2200;
 	--onErrorColour: #000000;
 	--successColour: #1bdf5c;
-	
+
 	--standardBorderRadius: 5px;
 	--standardButtonHeight: 52px;
 	--smallSpacing: 5px;
@@ -203,17 +202,26 @@ body {
 }
 
 .error-text {
-    color: var(--errorColour);
+	color: var(--errorColour);
 }
 
 .button:active {
 	opacity: var(--activeOpacity);
 }
 
-// .box-button {
-// 	height: 200px;
-// 	width: 200px;
-// }
+i {
+	/* This is a fix for icons but maybe should use light and not regular */
+	font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
 
 .pulse-button:active {
 	animation: pulse 0.5s infinite ease-out;
@@ -228,8 +236,12 @@ body {
 	}
 }
 
-.button i {
-	font-size: var(--standardIconSize);
+.button {
+	box-shadow: var(--onSurfaceShadow);
+
+	i {
+		font-size: var(--standardIconSize);
+	}
 }
 
 .box-button {
@@ -240,6 +252,7 @@ body {
 	background-image: var(--buttonGradient);
 	border-radius: var(--standardBorderRadius);
 	position: relative;
+	text-align: center;
 }
 
 .box-button h3 {
@@ -255,41 +268,41 @@ body {
 }
 
 .surface-content-grid {
-    display: grid;
-    height: 100%;
-    gap: var(--mediumSpacing);
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+	display: grid;
+	height: 100%;
+	gap: 16px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
 }
 
 .presets-grid {
-    padding: var(--mediumSpacing);
-    display: grid;
-    //height: 300px;
-    gap: var(--mediumSpacing);
-    grid-template-columns: repeat(5, 1fr);
-    //grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
-    overflow-x: visible;
-    overflow-y: scroll;
+	padding: 0 var(--mediumSpacing);
+	display: grid;
+	//height: 300px;
+	gap: var(--mediumSpacing);
+	grid-template-columns: repeat(5, 1fr);
+	//grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
+	overflow-x: visible;
+	overflow-y: scroll;
 }
 
 .preset-button {
-    width: 100%;
-    height: var(--standardButtonHeight);
-    min-height: var(--standardButtonHeight);
-    border-radius: var(--standardBorderRadius);
+	width: 100%;
+	height: var(--standardButtonHeight);
+	min-height: var(--standardButtonHeight);
+	border-radius: var(--standardBorderRadius);
 	background-image: var(--buttonGradient);
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .content-title {
-    display: flex;
-    align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 }
 
 .content-title h2 {
-    margin: 0;
+	margin: 0;
 }

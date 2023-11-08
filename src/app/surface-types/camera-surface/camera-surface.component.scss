@@ -1,6 +1,8 @@
 .dpad {
     grid-row: 3/span 4;
     grid-column: 2/span 4;
+    margin:auto;
+    width: 80%;
 }
 
 .zoom-in-button {
@@ -40,7 +42,7 @@
 .control-button {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 

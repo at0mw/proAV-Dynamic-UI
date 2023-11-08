@@ -19,6 +19,9 @@ export class ShadeSliderComponent {
   @Input() elementId: string = "";
 
   animateSliderMotion: Boolean = true;
+  previousValue: number = 0;
+  isIncreasing: boolean = false;
+  isDecreasing: boolean = false;
 
   ngOnChanges() {
     this.animateSliderMotion = true;
@@ -27,6 +30,20 @@ export class ShadeSliderComponent {
   sliderEvent(event: Event) {
     event.stopPropagation();
     event.preventDefault();
+    console.log("Previous Value", this.initialValue);
+    console.log("Initial Value", this.previousValue);
+    if (this.initialValue > this.previousValue) {
+      this.isIncreasing = true;
+      this.isDecreasing = false;
+    } else if (this.initialValue < this.previousValue) {
+      this.isIncreasing = false;
+      this.isDecreasing = true;
+    } else {
+      this.isIncreasing = false;
+      this.isDecreasing = false;
+    }
+
+    this.previousValue = this.initialValue;
     this.updateSliderVisuals(true);
   }
 
