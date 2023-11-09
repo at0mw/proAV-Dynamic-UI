@@ -39,9 +39,9 @@ export class SurfaceCollectionComponent {
   }
 
   updateActiveSurface(targetSurfaceId: number) {
-    console.log(`CrComLib :::: Received Update ::: Analog :: Join ${StringJoins.SurfaceConfigJoin} : Value ${targetSurfaceId}`);
-    if(!this.surfaces) return;
+    console.log(`CrComLib :::: Received Update ::: Analog :: Join ${AnalogJoins.ActiveSurfaceId} : Value ${targetSurfaceId}`);
     this.targetActiveSurface = targetSurfaceId;
+    if(!this.surfaces) return;
     const foundSurface = this.surfaces.find(surface => surface.id === targetSurfaceId);
     
     if(!foundSurface) return;

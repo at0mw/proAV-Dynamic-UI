@@ -3,6 +3,7 @@ import { ActionType, MessageService, PresetConfig } from '@proav/angular-lib';
 import { DigitalJoins } from 'src/app/protocol/constants/digital-joins';
 import { StringJoins } from 'src/app/protocol/constants/string-joins';
 import { environment } from 'src/app/protocol/environments/environment';
+import { testCameraConfig } from 'src/app/testing-values/test-camera-msg';
 import { testPresetsConfig } from 'src/app/testing-values/test-presets-msg';
 
 declare var CrComLib: any;
@@ -31,7 +32,7 @@ export class CameraSurfaceComponent {
         };
       });
 
-      this.cameraOptions = testPresetsConfig.map(preset => {
+      this.cameraOptions = testCameraConfig.map(preset => {
         return {
           id: preset.id,
           label: preset.label,

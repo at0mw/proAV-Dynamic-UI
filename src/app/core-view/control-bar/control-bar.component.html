@@ -3,7 +3,12 @@
 
         <!-- Mic Controls -->
         <div class="control-buttons" [style.grid-row]="'1 / span 1'" [style.grid-column]="'1 / span 1'">
-            <i id="micMute" class="micmute-icon footer-icon fa-regular fa-microphone-slash button" (click)="micMutePressed()"></i>
+            <i id="micMute" 
+                class="micmute-icon footer-icon fa-regular button" 
+                (click)="micMutePressed()"
+                [class.fa-microphone-slash]="micMuteState"
+                [class.fa-microphone]="!micMuteState">
+            </i>
             <i id="mics" class="standard-footer-icon footer-icon fa-regular fa-caret-up button" (click)="micsMenuPressed()"></i>
         </div>
 
@@ -17,7 +22,12 @@
 
         <!-- Volume Controls -->
         <div class="control-buttons" [style.grid-row]="'1 / span 1'" [style.grid-column]="'8 / span 1'">
-            <i id="volume-mute" class="standard-footer-icon footer-icon fa-regular fa-volume-xmark button" (click)="volumeMutePressed()"></i>  
+            <i id="volume-mute" 
+                class="standard-footer-icon footer-icon fa-regular fa-volume-xmark button" 
+                (click)="volumeMutePressed()"
+                [class.fa-volume-xmark]="volumeMuteState"
+                [class.fa-volume]="!volumeMuteState">
+            </i>  
             <i id="volume-inputs" class="standard-footer-icon footer-icon fa-regular fa-caret-up button"  (click)="volumeMenuPressed()"></i>
         </div>
 
