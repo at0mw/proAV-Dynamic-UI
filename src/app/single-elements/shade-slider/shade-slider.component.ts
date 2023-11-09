@@ -22,6 +22,7 @@ export class ShadeSliderComponent {
   previousValue: number = 0;
   isIncreasing: boolean = false;
   isDecreasing: boolean = false;
+  countIncrements: number = 0;
 
   ngOnChanges() {
     this.animateSliderMotion = true;
@@ -30,17 +31,20 @@ export class ShadeSliderComponent {
   sliderEvent(event: Event) {
     event.stopPropagation();
     event.preventDefault();
-    console.log("Previous Value", this.initialValue);
-    console.log("Initial Value", this.previousValue);
     if (this.initialValue > this.previousValue) {
-      this.isIncreasing = true;
-      this.isDecreasing = false;
+      this.countIncrements = this.countIncrements + 1;
+      if(this.countIncrements > 1) {
+        console.log("Increase");
+        this.isIncreasing = false;
+        this.isDecreasing = true;
+      }
     } else if (this.initialValue < this.previousValue) {
-      this.isIncreasing = false;
-      this.isDecreasing = true;
-    } else {
-      this.isIncreasing = false;
-      this.isDecreasing = false;
+      this.countIncrements = this.countIncrements + 1;
+      if(this.countIncrements > 1) {
+        console.log("Decrease");
+        this.isIncreasing = true;
+        this.isDecreasing = false;
+      }
     }
 
     this.previousValue = this.initialValue;
@@ -107,6 +111,10 @@ export class ShadeSliderComponent {
   }
 
   sendSliderValue() {
+    this.isIncreasing = false;
+    this.isDecreasing = false;
+    this.countIncrements = 0;
+
     let jsonMessage = {
 			id: this.elementId,
 			value: this.initialValue

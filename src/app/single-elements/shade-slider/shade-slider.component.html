@@ -24,11 +24,18 @@
             <div class="roller-blind-item"></div>
             <div class="roller-blind-item"></div>
           </div> -->
+          <div class="slider-base"></div>
           <div #sliderThumb id="slider_thumb:1" class="range-slider_thumb shade-slider-thumb scalable">
             <div class="blinds-ring"></div>
             <!-- Rotate Arrow and Move Both Depending on Up or Down -->
-            <i class="fa-regular fa-arrow-down direction-arrow"></i>
-            <div class="thumb-text">{{ initialValue }}</div>
+            <i 
+              *ngIf="isIncreasing || isDecreasing" 
+              [class.up-arrow]="isIncreasing" 
+              [class.down-arrow]="isDecreasing" 
+              class="fa-regular fa-angle-up direction-arrow">
+            </i>
+            <!-- <i *ngIf="isDecreasing" class="fa-regular fa-arrow-down direction-arrow down-arrow"></i> -->
+            <div class="thumb-text" [class.moving-up]="isIncreasing">{{ initialValue }}</div>
           </div>
         </div>
         <div class="range-slider_line">

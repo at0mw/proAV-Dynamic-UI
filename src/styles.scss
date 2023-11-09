@@ -26,7 +26,7 @@ body {
 	--surfaceBlur: blur(40px);
 	--overlayBlur: blur(40px);
 
-	--primaryVariant: #23a2dd;
+	--primaryVariant: #6695ab; //#23a2dd;
 	--onPrimaryVariant: #ffffff;
 
 	--secondaryColour: #353b48;
@@ -276,7 +276,7 @@ h6 {
 }
 
 .presets-grid {
-	padding: 0 var(--mediumSpacing);
+	padding: var(--mediumSpacing);
 	display: grid;
 	//height: 300px;
 	gap: var(--mediumSpacing);
