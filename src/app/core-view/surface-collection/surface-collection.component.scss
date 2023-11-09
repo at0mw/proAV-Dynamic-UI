@@ -6,12 +6,32 @@
 	gap: var(--mediumSpacing);
 }
 
+
+@media (orientation: landscape) {
+	.surface {
+		height: 100%;
+		min-width: 5vw;
+	}
+}
+
+@media (orientation: portrait) {
+	.surface-collection {
+		flex-direction: column;
+	}
+
+	.surface {
+		height: 20px;
+		min-width: 5vh;
+	}
+}
+
+
 .surface {
 	cursor: pointer;
 	color: var(--onSurfaceColour);
 	transition: flex 0.5s;
-	height: 100%;
-	min-width: 5vw;
+	//height: 100%;
+	//min-width: 5vw;
 	border-radius: var(--standardBorderRadius);
 	box-shadow: var(--onBackgroundShadow);
 	backdrop-filter: var(--surfaceBlur);
