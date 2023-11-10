@@ -63,4 +63,15 @@
     background-color: var(--surfaceColour);
     backdrop-filter: var(--overlayBlur);
     z-index: 100;
+    transition: box-shadow 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+
+    i {
+        position: absolute;
+    }
+}
+
+.glow {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    transform: scale(0.95);
 }

@@ -22,6 +22,7 @@ export class MatrixSurfaceComponent {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      console.log("Deleted kinda");
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,

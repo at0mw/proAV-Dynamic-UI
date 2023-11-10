@@ -1,5 +1,10 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { 
+  CdkDragDrop, 
+  moveItemInArray,
+  transferArrayItem,
+  CdkDrag,
+  CdkDropList, } from '@angular/cdk/drag-drop';
 import { MessageService, PresetConfig, ActionType } from '@proav/angular-lib';
 import { AnalogJoins, DigitalJoins, StringJoins } from 'src/app/protocol/constants/constants.index';
 import { environment } from 'src/app/protocol/environments/environment';
@@ -15,7 +20,7 @@ export class LightingSurfaceComponent {
 	@Input() colourInput: string = '#FF5733';
 	brightnessSliderJoin: string = AnalogJoins.LightingBrightnessSlider;
 	showRetirementVillage = false;
-  deleteList: any;
+  animateRetirement = false;
 
 	presets: PresetConfig[] = [];
 	constructor(private messageService: MessageService) {
@@ -92,10 +97,20 @@ export class LightingSurfaceComponent {
 			// console.log(`Rearranged List Item ${movedPresetId}: Last Index ${event.previousIndex} New Index ${event.currentIndex}`);
 			this.sendPresetReorderUpdate(movedPresetId, event.currentIndex);
 		} else {
-      console.log("Let go in a different area??")
-			// Implement logic for moving items between different containers if needed.
+			const movedPresetId = event.item.data;
+			console.log('Let Delete Preset: ',movedPresetId);
+      this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
+      this.sendPresetUpdate(movedPresetId, ActionType.Delete);
 		}
 	}
+
+  animateArea(animate: boolean) {
+    if(this.showRetirementVillage && animate) {
+      this.animateRetirement = true;
+    } else {
+      this.animateRetirement = false;
+    }
+  }
 
 	sendPresetUpdate(presetId: number, actionType: ActionType) {
 		console.log('Action Type: ', ActionType.Delete);
@@ -120,12 +135,4 @@ export class LightingSurfaceComponent {
 		console.log('Json', jsonMessageString);
 		this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonMessageString);
 	}
-
-	// deletePreset(event: CdkDragDrop<any[]>): void {
-  //   console.log("Preset Deleted?");
-	// 	const presetToDelete = event.item.data;
-	// 	console.log('-----------------//Delete Preset', presetToDelete);
-	// 	// Implement your delete logic here
-	// 	// Remove the presetToDelete from the presets array or perform any other necessary actions
-	// }
 }

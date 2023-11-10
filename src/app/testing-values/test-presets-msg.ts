@@ -33,5 +33,25 @@ export const testPresetsConfig = [
 		id: 7,
 		label: 'Preset 7',
 		icon: ''
+	},
+	{
+		id: 8,
+		label: 'Preset 8',
+		icon: ''
+	},
+	{
+		id: 9,
+		label: 'Preset 9',
+		icon: ''
+	},
+	{
+		id: 10,
+		label: 'Preset 10',
+		icon: ''
+	},
+	{
+		id: 11,
+		label: 'Preset 11',
+		icon: ''
 	}
 ];
