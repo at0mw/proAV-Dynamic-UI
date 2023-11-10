@@ -50,16 +50,17 @@
 }
 
 .preset-retirement {
-    position: absolute;
+    grid-row: 10/span 1;
+    grid-column: 7/span 5;
     bottom: 0;
     right: 0;
-    height: 10%;
-    width: 10%;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: var(--mediumSpacing);
-    padding: var(--largeSpacing);
+    // margin: var(--mediumSpacing);
+    // padding: var(--largeSpacing);
     background-color: var(--surfaceColour);
     backdrop-filter: var(--overlayBlur);
     z-index: 100;

@@ -276,6 +276,7 @@ h6 {
 }
 
 .presets-grid {
+	position: relative;
 	//padding: var(--mediumSpacing);
 	display: grid;
 	//height: 300px;
@@ -285,6 +286,7 @@ h6 {
 	//grid-template-rows: repeat(auto-fill, minmax(var(--standardButtonHeight), auto));
 	overflow-x: visible;
 	overflow-y: scroll;
+	border-radius: var(--standardBorderRadius);
 }
 
 .preset-button {
