@@ -28,6 +28,7 @@
 .presets-grid {
     grid-row: 4/span 6;
     grid-column: 7/span 5;
+    position: relative;
 }
 
 /*
@@ -46,4 +47,20 @@
 .preset-title {
     grid-row: 3/span 1;
     grid-column: 7/span 4;
+}
+
+.preset-retirement {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 10%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--mediumSpacing);
+    padding: var(--largeSpacing);
+    background-color: var(--surfaceColour);
+    backdrop-filter: var(--overlayBlur);
+    z-index: 100;
 }

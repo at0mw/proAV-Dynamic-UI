@@ -2,6 +2,7 @@ import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppComponent } from './app.component';
 
@@ -23,6 +24,7 @@ import { ShadeSliderComponent } from './single-elements/shade-slider/shade-slide
 import { LightingSurfaceComponent } from './surface-types/lighting-surface/lighting-surface.component';
 import { CameraSurfaceComponent } from './surface-types/camera-surface/camera-surface.component';
 import { HdmiSurfaceComponent } from './surface-types/hdmi-surface/hdmi-surface.component';
+import { MatrixSurfaceComponent } from './surface-types/matrix-surface/matrix-surface.component';
 
 const webXPanelFactory = (webService: WebXPanelService) => () => {
 	webService.initializeWebXPanel();
@@ -45,9 +47,10 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 		ShadeSliderComponent,
 		LightingSurfaceComponent,
 		CameraSurfaceComponent,
- 		HdmiSurfaceComponent
+ 		HdmiSurfaceComponent,
+   MatrixSurfaceComponent
 	],
-	imports: [ FormsModule, BrowserModule, NgxProAVLibModule ],
+	imports: [ FormsModule, BrowserModule, NgxProAVLibModule, DragDropModule ],
 	providers: [
 		{ provide: APP_INITIALIZER, useFactory: webXPanelFactory, multi: true, deps: [ WebXPanelService ] },
 		{ provide: APP_BASE_HREF, useValue: './proav-ui/' }

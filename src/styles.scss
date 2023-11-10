@@ -53,7 +53,7 @@ body {
 	--mediumSpacing: 10px;
 	--largeSpacing: 20px;
 
-	--onBackgroundShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(255, 255, 255, 0.1);
+	//--onBackgroundShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(255, 255, 255, 0.1);
 	//--overlayShadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -2px -1px 4px rgba(0, 0, 0, 0.5);
 	//--onSurfaceShadow: 1px 1px 4px rgba(0, 0, 0, 0.2), -1px -1px 4px #4b657956;
 	--onSurfacePressedShadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.2);
@@ -69,7 +69,7 @@ body {
 
 	--standardIconSize: 28px;
 	--iconPressSize: 44px;
-	--activeOpacity: 0.6;
+	--activeOpacity: 0.4;
 	background-image: url('assets/img/crestron-blur.png');
 
 	--buttonGradient: linear-gradient(

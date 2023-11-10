@@ -10,7 +10,8 @@
 @media (orientation: landscape) {
 	.surface {
 		height: 100%;
-		min-width: 5vw;
+		// min-width: 5vw;
+		width: 75px;
 	}
 }
 
@@ -21,7 +22,7 @@
 
 	.surface {
 		height: 20px;
-		min-width: 5vh;
+		//min-width: 5vh;
 	}
 }
 

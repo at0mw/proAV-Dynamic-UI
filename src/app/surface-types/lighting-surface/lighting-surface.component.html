@@ -22,13 +22,31 @@
     <div class="content-title preset-title">
         <h2>Presets</h2>
     </div>
-    <div class="presets-grid">
-        <ng-container *ngFor="let preset of presets; let idx = index">
-            <div class="preset-button button pulse-button"
-              [style.grid-row]="getGridRowPreset(idx)"
-              [style.grid-column]="'1/ span 5'"
-              (click)="presetTriggered(preset.id)"
-            ><div>{{preset.label}}</div></div>
-        </ng-container>
+    <div 
+        class="presets-grid" 
+        cdkDropList 
+        #presetList="cdkDropList" 
+        (cdkDropListDropped)="drop($event)" 
+        [cdkDropListConnectedTo]="[deleteList]">
+        <div 
+            *ngFor="let preset of presets; 
+            let idx = index" 
+            class="preset-button button pulse-button" 
+            cdkDrag
+            [style.grid-row]="getGridRowPreset(idx)"
+            [style.grid-column]="'1/ span 5'"
+            (click)="presetTriggered(preset.id)"
+            [cdkDragData]="preset.id"
+            (cdkDragStarted)="showRetirementVillage = true"
+            (cdkDragEnded)="showRetirementVillage = false">
+            <div>{{preset.label}}</div>
+        </div>
+    </div>
+    <div class="preset-retirement" 
+    *ngIf="showRetirementVillage" 
+    cdkDropList 
+    (cdkDropListDropped)="drop($event)" 
+    #deleteList="cdkDropList">
+        <i class="fas fa-trash-alt"></i>
     </div>
 </div>

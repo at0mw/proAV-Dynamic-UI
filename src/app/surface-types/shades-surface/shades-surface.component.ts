@@ -26,8 +26,7 @@ export class ShadesSurfaceComponent {
         return {
           id: preset.id,
           label: preset.label,
-          icon: preset.icon,
-          order: preset.order
+          icon: preset.icon
         };
       });
     }
