@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { 
+  CdkDragDrop, 
+  moveItemInArray,
+  transferArrayItem,
+  CdkDrag,
+  CdkDropList, } from '@angular/cdk/drag-drop';
 import { MessageService, SliderConfig, PresetConfig, ActionType } from '@proav/angular-lib';
 import { DigitalJoins, StringJoins } from 'src/app/protocol/constants/constants.index';
 import { environment } from 'src/app/protocol/environments/environment';
@@ -12,6 +18,9 @@ declare var CrComLib: any;
 })
 export class ShadesSurfaceComponent {
   shadeSlidersUpdate: string = StringJoins.ShadeSlidersUpdate
+	showRetirementVillage = false;
+  animateRetirement = false;
+
   constructor(private messageService: MessageService) {
     if(!environment.production) {
       this.sliders = testSlidersConfig.map(slider => {
@@ -42,8 +51,8 @@ export class ShadesSurfaceComponent {
     // CrComLib.subscribeState('s', StringJoins.ShadePresetsConfig, (value: string) => this.updateShadeValue(value));
   }
 
-  sliders?: SliderConfig[];
-  presets?: PresetConfig[];
+  sliders: SliderConfig[] = [];
+  presets: PresetConfig[] = [];
 
   updateShadeSliders(value: string) {
     if(!value) return;
@@ -88,21 +97,14 @@ export class ShadesSurfaceComponent {
     }
   }
 
-  // updateShadeValue(value: string) {;
-  //   if(!value) return;
-  //   console.log(`CrComLib :::: Received Update ::: Serial :: Join ${StringJoins.ShadeSlidersUpdate} : Value ${value}`);
-    
-  //   // try {
-  //   //   const data = JSON.parse(value);
-  //   //   if (data.surfaces && Array.isArray(data.sliders)) {
-  //   //     this.sliders = data.sliders as SliderConfig[];
-  //   //   } else {
-  //   //     console.error('Invalid JSON structure: surfaces property is missing or not an array.');
-  //   //   }
-  //   // } catch (error) {
-  //   //   console.error('Error parsing JSON:', error);
-  //   // }
-  // }
+  animateArea(animate: boolean) {
+    if(this.showRetirementVillage && animate) {
+      this.animateRetirement = true;
+    } else {
+      this.animateRetirement = false;
+    }
+  }
+
 
   allOpen() {
     this.messageService.sendActionMessage(DigitalJoins.ShadesAllOpen);
@@ -125,11 +127,41 @@ export class ShadesSurfaceComponent {
   }
 
   presetTriggered(presetId: number) {
-		let jsonSelectMessage = {
-			id: presetId,
-			action: ActionType.Press
-		};
-		const jsonSelectMessageString = JSON.stringify(jsonSelectMessage);
-    this.messageService.sendStringMessage(StringJoins.ShadePresetsUpdate, jsonSelectMessageString);
+    this.sendPresetUpdate(presetId, ActionType.Press);
   }
+
+  drop(event: CdkDragDrop<PresetConfig[]>): void {
+		if (event.previousContainer === event.container) {
+			const movedPresetId = event.item.data;
+			moveItemInArray(this.presets, event.previousIndex, event.currentIndex);
+
+			this.sendPresetReorderUpdate(movedPresetId, event.currentIndex);
+		} else {
+			const movedPresetId = event.item.data;
+			console.log('Let Delete Preset: ',movedPresetId);
+      		this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
+      		this.sendPresetUpdate(movedPresetId, ActionType.Delete);
+		}
+	}
+
+  sendPresetUpdate(presetId: number, actionType: ActionType) {
+		let jsonMessage = {
+			id: presetId,
+			action: actionType
+		};
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonMessageString);
+	}
+
+	sendPresetReorderUpdate(presetId: number, newIndex: number) {
+		let jsonMessage = {
+			id: presetId,
+			action: ActionType.Reorder,
+			newindex: newIndex
+		};
+		console.log('Object', jsonMessage);
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		console.log('Json', jsonMessageString);
+		this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonMessageString);
+	}
 }

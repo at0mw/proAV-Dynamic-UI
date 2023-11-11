@@ -16,5 +16,11 @@ export const testCameraConfig = [
 		label: 'Camera 3',
 		icon: '',
         order: 3
+	},
+	{
+		id: 4,
+		label: 'Camera 4',
+		icon: '',
+        order: 4
 	}
 ]

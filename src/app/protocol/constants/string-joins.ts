@@ -12,6 +12,7 @@ export const StringJoins = {
     CameraOptionsConfig: "30",
     CameraPresetsConfig: "31",
     CameraPresetsUpdate: "32",
+    CameraOptionsUpdate: "33",
 
     
 	// Air-Media Joins - ID 9

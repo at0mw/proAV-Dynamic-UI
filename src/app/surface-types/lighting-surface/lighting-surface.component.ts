@@ -20,7 +20,7 @@ export class LightingSurfaceComponent {
 	@Input() colourInput: string = '#FF5733';
 	brightnessSliderJoin: string = AnalogJoins.LightingBrightnessSlider;
 	showRetirementVillage = false;
-  animateRetirement = false;
+  	animateRetirement = false;
 
 	presets: PresetConfig[] = [];
 	constructor(private messageService: MessageService) {
@@ -99,8 +99,8 @@ export class LightingSurfaceComponent {
 		} else {
 			const movedPresetId = event.item.data;
 			console.log('Let Delete Preset: ',movedPresetId);
-      this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
-      this.sendPresetUpdate(movedPresetId, ActionType.Delete);
+      		this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
+      		this.sendPresetUpdate(movedPresetId, ActionType.Delete);
 		}
 	}
 
@@ -113,9 +113,6 @@ export class LightingSurfaceComponent {
   }
 
 	sendPresetUpdate(presetId: number, actionType: ActionType) {
-		console.log('Action Type: ', ActionType.Delete);
-		console.log('Action Type: ', ActionType.Reorder);
-		console.log('Action Type: ', ActionType.Release);
 		let jsonMessage = {
 			id: presetId,
 			action: actionType

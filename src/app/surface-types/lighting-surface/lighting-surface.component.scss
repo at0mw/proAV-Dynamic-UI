@@ -52,27 +52,4 @@
 .preset-retirement {
     grid-row: 10/span 1;
     grid-column: 7/span 5;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // margin: var(--mediumSpacing);
-    // padding: var(--largeSpacing);
-    background-color: var(--surfaceColour);
-    backdrop-filter: var(--overlayBlur);
-    z-index: 100;
-    transition: box-shadow 1s ease-in-out;
-    transition: transform 1s ease-in-out;
-
-    i {
-        position: absolute;
-    }
-}
-
-.glow {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-    transform: scale(0.95);
 }

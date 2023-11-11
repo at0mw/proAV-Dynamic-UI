@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { 
+  CdkDragDrop, 
+  moveItemInArray,
+  transferArrayItem,
+  CdkDrag,
+  CdkDropList, } from '@angular/cdk/drag-drop';
 import { ActionType, MessageService, PresetConfig } from '@proav/angular-lib';
 import { DigitalJoins } from 'src/app/protocol/constants/digital-joins';
 import { StringJoins } from 'src/app/protocol/constants/string-joins';
@@ -18,8 +24,12 @@ export class CameraSurfaceComponent {
   dpadLeftJoin: string = DigitalJoins.CameraDpadLeft;
   dpadRightJoin: string = DigitalJoins.CameraDpadRight;
   
-  cameraOptions?: PresetConfig[];
-  presets?: PresetConfig[];
+	showRetirementVillage = false;
+  animateRetirement = false;
+
+  
+  cameraOptions: PresetConfig[] = [];
+  presets: PresetConfig[] = [];
 
   constructor(private messageService: MessageService) {
     if(!environment.production) {
@@ -110,11 +120,62 @@ export class CameraSurfaceComponent {
   }
 
   presetTriggered(presetId: number) {
-		let jsonSelectMessage = {
-			id: presetId,
-			action: ActionType.Press
-		};
-		const jsonSelectMessageString = JSON.stringify(jsonSelectMessage);
-    this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonSelectMessageString);
+    this.sendPresetUpdate(presetId, ActionType.Press);
   }
+
+  cameraOptionTriggered(cameraId: number) {
+    this.sendOptionsUpdate(cameraId, ActionType.Press);
+  }
+  
+  drop(event: CdkDragDrop<PresetConfig[]>): void {
+		if (event.previousContainer === event.container) {
+			const movedPresetId = event.item.data;
+			moveItemInArray(this.presets, event.previousIndex, event.currentIndex);
+
+			this.sendPresetReorderUpdate(movedPresetId, event.currentIndex);
+		} else {
+			const movedPresetId = event.item.data;
+			console.log('Let Delete Preset: ',movedPresetId);
+      		this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
+      		this.sendPresetUpdate(movedPresetId, ActionType.Delete);
+		}
+	}
+
+  animateArea(animate: boolean) {
+    if(this.showRetirementVillage && animate) {
+      this.animateRetirement = true;
+    } else {
+      this.animateRetirement = false;
+    }
+  }
+
+  sendOptionsUpdate(presetId: number, actionType: ActionType) {
+		let jsonMessage = {
+			id: presetId,
+			action: actionType
+		};
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		this.messageService.sendStringMessage(StringJoins.CameraOptionsUpdate, jsonMessageString);
+	}
+
+  sendPresetUpdate(presetId: number, actionType: ActionType) {
+		let jsonMessage = {
+			id: presetId,
+			action: actionType
+		};
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		this.messageService.sendStringMessage(StringJoins.CameraPresetsUpdate, jsonMessageString);
+	}
+
+	sendPresetReorderUpdate(presetId: number, newIndex: number) {
+		let jsonMessage = {
+			id: presetId,
+			action: ActionType.Reorder,
+			newindex: newIndex
+		};
+		console.log('Object', jsonMessage);
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		console.log('Json', jsonMessageString);
+		this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonMessageString);
+	}
 }

@@ -47,26 +47,50 @@
     <div class="content-title camera-options-title">
         <h2>Camera Options</h2>
     </div>
-    <div class="camera-options-grid presets-grid">
+    <div class="camera-options-grid">
         <ng-container *ngFor="let cameraOption of cameraOptions; let idx = index">
-            <div class="preset-button button pulse-button"
-              [style.grid-row]="getGridRowPreset(idx)"
-              [style.grid-column]="'1/ span 5'"
-              (click)="presetTriggered(cameraOption.id)"
-            ><div>{{cameraOption.label}}</div></div>
+            <div class="camera-option-button button"
+                (click)="cameraOptionTriggered(cameraOption.id)">            
+                <i class="fa-regular fa-video"></i>
+                <div>{{cameraOption.label}}</div>
+            </div>
         </ng-container>
     </div>
     <!-- Camera Presets Area -->
     <div class="content-title preset-title">
         <h2>Presets</h2>
     </div>
-    <div class="presets-grid camera-presets-grid">
-        <ng-container *ngFor="let preset of presets; let idx = index">
-            <div class="preset-button button pulse-button"
-              [style.grid-row]="getGridRowPreset(idx)"
-              [style.grid-column]="'1/ span 5'"
-              (click)="presetTriggered(preset.id)"
-            ><div>{{preset.label}}</div></div>
-        </ng-container>
+    <div
+    cdkDropList
+    #presetList="cdkDropList"
+    [cdkDropListData]="presets"
+    [cdkDropListConnectedTo]="[deleteList]"        
+    class="presets-grid"
+    (cdkDropListDropped)="drop($event)">
+        <div 
+            *ngFor="let preset of presets; track item; let idx = index;" 
+            [style.grid-row]="getGridRowPreset(idx)"
+            [cdkDragData]="preset.id"
+            [cdkDragStartDelay]="500"
+            [style.grid-column]="'1/ span 5'"
+            (click)="presetTriggered(preset.id)"
+            (cdkDragStarted)="showRetirementVillage = true"
+            (cdkDragEnded)="showRetirementVillage = false"
+            class="preset-button button" 
+            cdkDrag>{{preset.label}}
+        </div>
+    </div>
+    <!-- Delete a Preset By Dragging Item Here --> 
+    <div
+        cdkDropList
+        #deleteList="cdkDropList"
+        [cdkDropListConnectedTo]="[presetList]"
+        [style.opacity]="showRetirementVillage ? 1 : 0"
+        [class.glow]="animateRetirement"
+        (pointerenter)="animateArea(true)"
+        (pointerleave)="animateArea(false)"
+        class="preset-retirement"
+        (cdkDropListDropped)="drop($event)">
+        <i class="fas fa-trash-alt"></i>
     </div>
 </div>
