@@ -19,7 +19,7 @@ export class NavBarComponent {
     eventService.onConnected().subscribe(() => this.clientConnected());
     eventService.onDisconnected().subscribe(() => this.clientDisconnected());
     eventService.onFetchTokenFailed().subscribe(() => this.connectError());
-    messageService.subscribeToMessageByID(MessageType.AvailablePages).subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
+   // messageService.subscribeToMessageByID(MessageType.AvailablePages).subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     //messageService.messageBase$.subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
     const pages: PageConfig[] = [
       { pageid: "home", pagename: 'These', pageicon: 'fa-solid fa-house' },

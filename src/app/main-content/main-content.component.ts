@@ -24,7 +24,7 @@ export class MainContentComponent {
         querytype: QueryType.Pages,
         pageid: page
       };
-      this.messageService.sendJsonMessage(JSON.stringify(message));
+      //this.messageService.sendJsonMessage(JSON.stringify(message));
     });
   }
 }

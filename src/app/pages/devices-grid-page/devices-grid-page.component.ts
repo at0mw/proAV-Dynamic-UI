@@ -18,7 +18,7 @@ export class DevicesGridPageComponent {
   });
 
   constructor(messageService : MessageService) {    
-    messageService.subscribeToMessageByID(MessageType.AvailableDevices).subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
+   // messageService.subscribeToMessageByID(MessageType.AvailableDevices).subscribe((message: MessageBase) => this.receivedMessageUpdate(message));
   }
 
   receivedMessageUpdate(message: MessageBase) {
