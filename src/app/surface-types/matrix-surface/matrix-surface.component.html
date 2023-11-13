@@ -1,29 +1,3 @@
-<div class="test-content">
-    <div class="example-container">
-        <h2>To do</h2>
-      
-        <div
-          cdkDropList
-          #todoList="cdkDropList"
-          [cdkDropListData]="todo"
-          [cdkDropListConnectedTo]="[doneList]"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div *ngFor="let item of todo; track item" class="example-box" cdkDrag>{{item}}</div>
-        </div>
-      </div>
-      
-      <div class="example-container">
-        <h2>Done</h2>
-      
-        <div
-          cdkDropList
-          #doneList="cdkDropList"
-          [cdkDropListData]="done"
-          [cdkDropListConnectedTo]="[todoList]"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-            <!-- <div *ngFor="let item of done; track item" class="example-box" cdkDrag>{{item}}</div> -->
-        </div>
-      </div>      
+<div class="surface-content-grid">  
+  <lib-button-list-module class="input-presets" [presets]="presets"></lib-button-list-module>
 </div>

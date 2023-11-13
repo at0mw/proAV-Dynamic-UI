@@ -25,7 +25,7 @@
     grid-column: 2/span 4;
 }
 
-.presets-grid {
+.presets-list {
     grid-row: 4/span 6;
     grid-column: 7/span 5;
     position: relative;
@@ -46,10 +46,21 @@
 
 .preset-title {
     grid-row: 3/span 1;
-    grid-column: 7/span 4;
+    grid-column: 7/span 5;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: end;
+    // i {
+    //     font-size: var(--iconPressSize);
+    // }
 }
 
 .preset-retirement {
     grid-row: 10/span 1;
     grid-column: 7/span 5;
 }
+
+// .create-preset-button {
+//     grid-row: 9/span 1;
+//     grid-column: 7/span 5;
+// }

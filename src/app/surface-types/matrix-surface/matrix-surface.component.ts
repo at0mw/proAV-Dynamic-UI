@@ -1,34 +1,25 @@
 import { Component } from '@angular/core';
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-  CdkDrag,
-  CdkDropList,
-} from '@angular/cdk/drag-drop';
-
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
+import { ActionType, MessageService, PresetConfig } from '@proav/angular-lib';
+import { environment } from 'src/app/protocol/environments/environment';
+import { testPresetsConfig } from 'src/app/testing-values/test-presets-msg';
 
 @Component({
-  selector: 'app-matrix-surface',
-  templateUrl: './matrix-surface.component.html',
-  styleUrls: ['./matrix-surface.component.scss']
+	selector: 'app-matrix-surface',
+	templateUrl: './matrix-surface.component.html',
+	styleUrls: [ './matrix-surface.component.scss' ]
 })
 export class MatrixSurfaceComponent {
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
-
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      console.log("Deleted kinda");
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
-  }
+	presets: PresetConfig[] = [];
+	constructor(private messageService: MessageService) {
+		if (!environment.production) {
+			this.presets = testPresetsConfig.map((preset) => {
+				return {
+					id: preset.id,
+					label: preset.label,
+					icon: preset.icon
+				};
+			});
+		}
+	}
 }

@@ -1,10 +1,5 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { 
-  CdkDragDrop, 
-  moveItemInArray,
-  transferArrayItem,
-  CdkDrag,
-  CdkDropList, } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { MessageService, PresetConfig, ActionType } from '@proav/angular-lib';
 import { AnalogJoins, DigitalJoins, StringJoins } from 'src/app/protocol/constants/constants.index';
 import { environment } from 'src/app/protocol/environments/environment';
@@ -20,7 +15,8 @@ export class LightingSurfaceComponent {
 	@Input() colourInput: string = '#FF5733';
 	brightnessSliderJoin: string = AnalogJoins.LightingBrightnessSlider;
 	showRetirementVillage = false;
-  	animateRetirement = false;
+	animateRetirement = false;
+	presetLabel: string = '';
 
 	presets: PresetConfig[] = [];
 	constructor(private messageService: MessageService) {
@@ -37,7 +33,7 @@ export class LightingSurfaceComponent {
 
 	ngOnInit() {
 		console.log(`CrComLib :::: Subscribing ::: Serial :: Join : ${StringJoins.ShadePresetsConfig}`);
-		CrComLib.subscribeState('s', StringJoins.ShadePresetsConfig, (value: string) =>
+		CrComLib.subscribeState('s', StringJoins.LightingPresetsConfig, (value: string) =>
 			this.updateLightingPresets(value)
 		);
 
@@ -85,6 +81,13 @@ export class LightingSurfaceComponent {
 		this.sendPresetUpdate(presetId, ActionType.Press);
 	}
 
+	createPreset() {
+		if (this.presetLabel == '') return;
+		this.sendPresetCreateUpdate(this.presetLabel);
+
+		this.presetLabel = '';
+	}
+
 	handleTouchEvents(event: Event) {
 		console.log('Child component - Touch Start');
 		event.stopPropagation();
@@ -98,19 +101,19 @@ export class LightingSurfaceComponent {
 			this.sendPresetReorderUpdate(movedPresetId, event.currentIndex);
 		} else {
 			const movedPresetId = event.item.data;
-			console.log('Let Delete Preset: ',movedPresetId);
-      		this.presets = this.presets.filter(preset => preset.id !== movedPresetId);
-      		this.sendPresetUpdate(movedPresetId, ActionType.Delete);
+			console.log('Let Delete Preset: ', movedPresetId);
+			this.presets = this.presets.filter((preset) => preset.id !== movedPresetId);
+			this.sendPresetUpdate(movedPresetId, ActionType.Delete);
 		}
 	}
 
-  animateArea(animate: boolean) {
-    if(this.showRetirementVillage && animate) {
-      this.animateRetirement = true;
-    } else {
-      this.animateRetirement = false;
-    }
-  }
+	animateArea(animate: boolean) {
+		if (this.showRetirementVillage && animate) {
+			this.animateRetirement = true;
+		} else {
+			this.animateRetirement = false;
+		}
+	}
 
 	sendPresetUpdate(presetId: number, actionType: ActionType) {
 		let jsonMessage = {
@@ -126,6 +129,17 @@ export class LightingSurfaceComponent {
 			id: presetId,
 			action: ActionType.Reorder,
 			newindex: newIndex
+		};
+		console.log('Object', jsonMessage);
+		const jsonMessageString = JSON.stringify(jsonMessage);
+		console.log('Json', jsonMessageString);
+		this.messageService.sendStringMessage(StringJoins.LightingPresetUpdate, jsonMessageString);
+	}
+
+	sendPresetCreateUpdate(label: string) {
+		let jsonMessage = {
+			label: label,
+			action: ActionType.Create
 		};
 		console.log('Object', jsonMessage);
 		const jsonMessageString = JSON.stringify(jsonMessage);

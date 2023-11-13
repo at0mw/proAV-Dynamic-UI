@@ -61,7 +61,7 @@ export class ShadesSurfaceComponent {
     try {
       const data = JSON.parse(value);
       if (data && Array.isArray(data)) {
-        if(!this.sliders) {
+        if(this.sliders.length == 0) {
           console.log("First Creation of Sliders");
           this.sliders = data as SliderConfig[];
         } else {
