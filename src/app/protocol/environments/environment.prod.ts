@@ -1,4 +1,4 @@
 export const environment = {
-    production: true,
+    production: false,
     ipId: '8|0x08'
 };
