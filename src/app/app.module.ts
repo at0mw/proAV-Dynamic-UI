@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +6,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppComponent } from './app.component';
 
-import { WebXPanelService } from './services/web.xpanel.service';
+// import { WebXPanelService } from './services/web.xpanel.service';
 import { NgxProAVLibModule } from '@proav/angular-lib';
 
 import { SurfaceCollectionComponent } from './core-view/surface-collection/surface-collection.component';
@@ -26,9 +26,9 @@ import { CameraSurfaceComponent } from './surface-types/camera-surface/camera-su
 import { HdmiSurfaceComponent } from './surface-types/hdmi-surface/hdmi-surface.component';
 import { MatrixSurfaceComponent } from './surface-types/matrix-surface/matrix-surface.component';
 
-const webXPanelFactory = (webService: WebXPanelService) => () => {
-	webService.initializeWebXPanel();
-};
+// const webXPanelFactory = (webService: WebXPanelService) => () => {
+// 	webService.initializeWebXPanel();
+// };
 
 @NgModule({
 	declarations: [
@@ -52,8 +52,7 @@ const webXPanelFactory = (webService: WebXPanelService) => () => {
 	],
 	imports: [ FormsModule, BrowserModule, NgxProAVLibModule, DragDropModule ],
 	providers: [
-		{ provide: APP_INITIALIZER, useFactory: webXPanelFactory, multi: true, deps: [ WebXPanelService ] },
-		{ provide: APP_BASE_HREF, useValue: './proav-ui/' }
+		{ provide: APP_BASE_HREF, useValue: './' }
 	],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 	bootstrap: [ AppComponent ]

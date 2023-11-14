@@ -20,7 +20,6 @@
             "outputPath": "dist/pro-av-dynamic-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/proav-ui/",
             "polyfills": [
               "zone.js"
             ],
