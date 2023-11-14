@@ -1,11 +1,6 @@
 export const testSurfaceConfig = {
     surfaces: [                
         {
-            id: 7,
-            name: "Source Select",
-            icon: "fa-regular fa-arrow-down-to-square fa-rotate-270"
-        },
-        {
             id: 5,
             name: "Source Select",
             icon: "fa-regular fa-arrow-down-to-square fa-rotate-270"
